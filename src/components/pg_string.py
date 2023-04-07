@@ -1,12 +1,13 @@
+from components.pg_literal import PG_Literal
 from js_random import JS_Random as R
-from pg_expression import PG_Expression
+from typing import Self
 
 words = "hello;world;day;find;eat;student;huge;goodbye;math;english;physics;chemistry;biology;french;stem;art;drama;music;geography;history;philosophy;cs;eblock;aps;periwinkle;first;second;violin;piano;sun;snow;rain;sleet;hail;fog;breeze;a;b;c;d;e;f;g;h;i;j;k;l;m;n;o;p;q;r;s;t;u;v;w;x;y;z;foo;bar;baz;mark;matthew;luke;john;sawczak;groot;kim;robinson;peters;van schepen;dykxhoorn;hoving;petrusma;gretton;brown;black;red;fuchsia;green;yellow;white;grey;black;blue;teal;turquoise;purple;violet;indigo;orange;gold;forest;beach;hills;mountains;desert;plains;prairie;sky"
 words = words.split(';');
 
-class PG_String(PG_Expression):
+class PG_String(PG_Literal):
 
-    def evaluate(self: Self) -> str:
+    def generate(self: Self) -> str:
         s = R.choose_from(words)
         n = 1
         chance = 0.5
@@ -14,8 +15,12 @@ class PG_String(PG_Expression):
         while (n < 4) and (R.flip_coin(chance)):
             s += ' ' + R.choose_from(words)
             n += 1
-            chance = 1 / (n * 2)
+            chance = 1 / ((n * 2) + 2)
         
+        return s  
+
+    def __str__(self: Self) -> str:
+        s = self.generate()
         q = "'"
         if R.flip_coin(0.5):
             q = '"'

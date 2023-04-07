@@ -1,5 +1,6 @@
 from feature import Feature
-from python_generator import PythonGenerator as PG
+from pg import PythonGenerator as PG
+from components.pg_line import PG_Line
 
 feature_names = [
     "symbols",
@@ -10,12 +11,12 @@ feature_names = [
     "variables",
     "arrays",
     "maps",
-    "control",
+    "controls",
     "imports",
     "functions"
   ]
 
-enabled = ['symbols', 'math', 'strings']
+enabled = ['symbols', 'math', 'strings', 'controls']
 
 features = {}
 
@@ -26,5 +27,7 @@ for name in feature_names:
 
     features[name] = feature
 
-prompt = PG.generate(features)
-print(prompt)
+pg = PG(features)
+prompt = PG_Line(pg)
+render = str(prompt)
+print(render)

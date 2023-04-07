@@ -1,9 +1,13 @@
 import random
+from typing import Self
 
 class JS_Random():
 
-    def flip_coin(chance: float) -> bool:
-        return (random.randint(0, 100) / 100) >= chance
+    def flip_coin(chance: float=0.5) -> bool:
+        return (random.randint(0, 100) / 100) < chance
+    
+    def flip_against(chance: float=0.5) -> bool:
+        return self.flip_coin(1 - chance)
     
     def choose_from(items: list) -> object:
         return random.choice(items)

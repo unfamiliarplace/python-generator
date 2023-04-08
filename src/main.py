@@ -3,7 +3,6 @@ from pg import PythonGenerator as PG
 from components.pg_line import PG_Line
 
 feature_names = [
-    "symbols",
     "math",
     "strings",
     "containers",
@@ -11,23 +10,30 @@ feature_names = [
     "variables",
     "arrays",
     "maps",
-    "controls",
     "imports",
-    "functions"
+    "functions",
+
+    # line types
+    "comments",
+    "statements",
+    "expressions",
+    "decorators",
+    "symbol_practice",
+    "real_world"
   ]
 
-enabled = ['symbols', 'math', 'strings', 'controls']
+disabled = ['containers', 'arrays', 'maps', 'imports', 'functions']
 
 features = {}
 
 for name in feature_names:
     feature = Feature(name)
-    feature.disable(True)
-    feature.value(name in enabled)
+    feature.disable(name not in disabled)
+    feature.value(name not in disabled)
 
     features[name] = feature
 
 pg = PG(features)
-prompt = PG_Line(pg)
-render = str(prompt)
+line = PG_Line().featurize(pg)
+render = str(line)
 print(render)

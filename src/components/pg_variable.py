@@ -1,7 +1,9 @@
 from typing import Self
 from js_random import JS_Random as R
+from components.pg_mixin_generatable import PG_Mixin_Generatable
+from components.pg_mixin_renderable import PG_Mixin_Renderable
 
-class PG_Variable():
+class PG_Variable(PG_Mixin_Generatable, PG_Mixin_Renderable):
 
     type_to_names = {
         'number': ['n', 'n_students', 'n_doughnuts'],
@@ -11,7 +13,7 @@ class PG_Variable():
         'misc': ['x', 'y', 'z', 'a', 'b', 'c']
     }
 
-    def __init__(self: Self, type: str='any', plural: bool=False) -> None:
+    def __init__(self: Self, type: str='any') -> None:
         self.type = type
 
     def generate(self: Self) -> str:

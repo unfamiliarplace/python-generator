@@ -1,14 +1,17 @@
-from components.pg_renderable import PG_Renderable
-from components.pg_statement import PG_Statement
+from components.pg_expression import PG_Expression
+from components.pg_mixin_featurized import PG_Mixin_Featurized
+from components.pg_sequence import PG_Sequence
 from typing import Self
+from components.pg_variable import PG_Variable
+from components.pg_mixin_generatable import PG_Mixin_Generatable
+from components.pg_mixin_renderable import PG_Mixin_Renderable
 
-class PG_Assignment(PG_Statement):
+class PG_Assignment(PG_Mixin_Generatable, PG_Mixin_Renderable, PG_Mixin_Featurized):
 
-    def __init__(self: Self) -> None:
-        pass
-
-    def generate(self: Self) -> PG_Renderable:
-        return PG_Renderable()
+    def generate(self: Self) -> PG_Sequence:
+        # TODO +=, -=, /=, *=, **=, //=, %=
+        # TODO names corresponding to types
+        return PG_Sequence(PG_Variable(), '=', PG_Expression().featurize(self.pg))
 
     def __str__(self: Self) -> str:
-        return ''
+        return str(self.generate())

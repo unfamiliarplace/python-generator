@@ -1,18 +1,16 @@
 from components.pg_boolean import PG_Boolean
-from pg import PythonGenerator
 from components.pg_float import PG_Float
 from components.pg_integer import PG_Integer
+from components.pg_mixin_featurized import PG_Mixin_Featurized
 from components.pg_string import PG_String
 from js_random import JS_Random as R
-from components.pg_renderable import PG_Renderable
 from typing import Self
+from components.pg_mixin_generatable import PG_Mixin_Generatable
+from components.pg_mixin_renderable import PG_Mixin_Renderable
 
-class PG_Expression():
+class PG_Expression(PG_Mixin_Generatable, PG_Mixin_Renderable, PG_Mixin_Featurized):
 
-    def __init__(self: Self, pg: PythonGenerator) -> None:
-        self.pg = pg
-
-    def generate(self: Self) -> PG_Renderable:
+    def generate(self: Self) -> PG_Mixin_Renderable:
         candidates = []
 
         if self.pg.on('strings'):

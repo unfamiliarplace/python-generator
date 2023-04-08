@@ -7,10 +7,13 @@ class JS_Random():
         return (random.randint(0, 100) / 100) < chance
     
     def flip_against(chance: float=0.5) -> bool:
-        return self.flip_coin(1 - chance)
+        return JS_Random.flip_coin(1 - chance)
     
     def choose_from(items: list) -> object:
-        return random.choice(items)
+        if not items:
+            return None
+        else:
+            return random.choice(items)
     
     def number_between(lower: int, upper: int, decimal: bool=False) -> int|float:
         if decimal:

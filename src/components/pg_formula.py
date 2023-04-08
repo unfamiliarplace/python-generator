@@ -1,8 +1,8 @@
 from components.pg_sequence import PG_Sequence
+from typing import Self
 
 # Oh my GOODNESS this is GODAWFUL there must be a better way
 import importlib
-from typing import Self
 
 class PG_Formula():
 

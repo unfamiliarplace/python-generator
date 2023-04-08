@@ -1,10 +1,11 @@
-from components.pg_renderable import PG_Renderable
 from components.pg_sequence import PG_Sequence
 from js_random import JS_Random as R
 from components.pg_formula import PG_Formula
 from typing import Self
+from components.pg_mixin_generatable import PG_Mixin_Generatable
+from components.pg_mixin_renderable import PG_Mixin_Renderable
 
-class PG_Control(PG_Renderable):
+class PG_Control(PG_Mixin_Generatable, PG_Mixin_Renderable):
     
     formulae = [
         # TODO
@@ -15,9 +16,6 @@ class PG_Control(PG_Renderable):
         PG_Formula('while', '<PG_Boolean>'),
         PG_Formula('if', '<PG_Boolean>'),
     ]
-
-    def __init__(self: Self) -> None:
-        pass
 
     def generate(self: Self) -> PG_Sequence:
         return R.choose_from(self.formulae).parse()

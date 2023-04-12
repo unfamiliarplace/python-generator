@@ -2,6 +2,10 @@ from components.pg_sequence import PG_Sequence
 from feature import Feature
 from typing import Self
 
+REQ_NONE = 0
+REQ_ANY = 1
+REQ_ALL = 2
+
 class PythonGenerator():
 
     def __init__(self: Self, features: dict[str, Feature]) -> None:
@@ -9,6 +13,11 @@ class PythonGenerator():
 
     def on(self: Self, feature_name: str) -> bool:
         return self.features[feature_name].value()
+    
+    # Requirement checkers
+
+    def none(self: Self, *features_names: str) -> bool:
+        return True
 
     def any(self: Self, *feature_names: str) -> bool:
         for feature_name in feature_names:

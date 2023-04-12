@@ -11,6 +11,10 @@ from components.pg_mixin_renderable import PG_Mixin_Renderable
 
 class PG_Line(PG_Mixin_Generatable, PG_Mixin_Renderable, PG_Mixin_Featurized):
 
+    patterns = {
+        
+    }
+
     option_to_class = {
         'statements': PG_Statement,
         'expressions': PG_Expression,

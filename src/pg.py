@@ -2,10 +2,6 @@ from components.pg_sequence import PG_Sequence
 from feature import Feature
 from typing import Self
 
-REQ_NONE = 0
-REQ_ANY = 1
-REQ_ALL = 2
-
 class PythonGenerator():
 
     def __init__(self: Self, features: dict[str, Feature]) -> None:

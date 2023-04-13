@@ -8,11 +8,15 @@ from components.pg_expression import PG_Expression
 from typing import Self
 from components.pg_mixin_generatable import PG_Mixin_Generatable
 from components.pg_mixin_renderable import PG_Mixin_Renderable
+from pg_formula_node import FN
+from pg_formula_requirement import FR, RM
+from pg_formula_pattern import FP
 
 class PG_Line(PG_Mixin_Generatable, PG_Mixin_Renderable, PG_Mixin_Featurized):
 
     patterns = {
-        
+        FP(FR('statements'), FN(PG_Statement)),
+
     }
 
     option_to_class = {

@@ -15,7 +15,10 @@ class PG_Formula_Requirement():
         PG_Requirement_Mode.ALL: PythonGenerator.all,
     }
 
-    def __init__(self: Self, req_mode: int=PG_Requirement_Mode.NONE, reqs: list[str]=[]) -> None:
+    def __init__(self: Self, reqs: list[str]=[], req_mode: int=PG_Requirement_Mode.ALL) -> None:
+
+        # TODO in order for this to work we need to access the instantiated PG not the static class
+
         self.req_mode = req_mode
         self.reqs = reqs
     

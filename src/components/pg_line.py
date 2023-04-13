@@ -8,42 +8,23 @@ from components.pg_expression import PG_Expression
 from typing import Self
 from components.pg_mixin_generatable import PG_Mixin_Generatable
 from components.pg_mixin_renderable import PG_Mixin_Renderable
-from pg_formula_node import FN
-from pg_formula_requirement import FR, RM
-from pg_formula_pattern import FP
+from components.pg_formula_node import FN
+from components.pg_formula_requirement import FR
+from components.pg_formula_pattern import FP
 
 class PG_Line(PG_Mixin_Generatable, PG_Mixin_Renderable, PG_Mixin_Featurized):
 
-    patterns = {
-        FP(FR('statements'), FN(PG_Statement)),
-
-    }
-
-    option_to_class = {
-        'statements': PG_Statement,
-        'expressions': PG_Expression,
-        'symbol_practice': PG_Symbol_Practice,
-        'real_world': PG_Real_World,
-        'decorators': PG_Decorator
-    }
-
-    def generate(self: Self) -> str:
-        candidates = []
-
-        for (option, cls) in self.option_to_class.items():
-            if self.pg.on(option):
-                candidate = cls()
-                if isinstance(candidate, PG_Mixin_Featurized):
-                    candidate.featurize(self.pg)
-
-                candidate = str(candidate)
-                candidates.append(candidate)
-
-                # TODO What about """Comment"""?
-                if self.pg.on('comments') and R.flip_coin(0.2) and cls is not PG_Symbol_Practice:
-                    candidates.append('# ' + candidate)
-        
-        return R.choose_from(candidates)
+    patterns = [
+        FP(FR('statements'), 5, FN(PG_Statement)),
+        FP(FR('expressions'), 5, FN(PG_Expression)),
+        FP(FR('symbol_practice'), 1, FN(PG_Symbol_Practice)),
+        FP(FR('real_world'), 3, FN(PG_Real_World)),
+        FP(FR('decorators'), 1, FN(PG_Decorator)),
+    ]
 
     def __str__(self: Self) -> str:
-        return self.generate()
+        pattern = self.generate()
+        s = str(pattern)
+        if self.pg.on('comments') and R.flip_coin(0.2) and not pattern.uses(PG_Symbol_Practice):
+            s = '# ' + s
+        return s

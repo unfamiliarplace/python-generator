@@ -1,4 +1,3 @@
-from components.pg_sequence import PG_Sequence
 from feature import Feature
 from typing import Self
 

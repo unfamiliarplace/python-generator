@@ -6,11 +6,14 @@ from components.pg_mixin_renderable import PG_Mixin_Renderable
 class PG_Variable(PG_Mixin_Generatable, PG_Mixin_Renderable):
 
     type_to_names = {
-        'number': ['n', 'n_students', 'n_doughnuts'],
+        'number': ['n', 'm', 'n_students', 'n_doughnuts', 'count'],
         'string': ['name', 'person', 'winner'],
         'float': ['fraction', 'proportion'],
         'container': ['names', 'ages', 'people', 'pizzas', 'values'],
-        'misc': ['x', 'y', 'z', 'a', 'b', 'c']
+        'misc': ['x', 'y', 'z', 'a', 'b', 'c'],
+        'index': ['i', 'j', 'k'],
+        'element': ['item', 'elem', 'element', 'val', '_'],
+        'placeholder': ['_']
     }
 
     def __init__(self: Self, type: str='any') -> None:

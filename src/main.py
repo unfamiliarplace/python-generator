@@ -3,12 +3,12 @@ from pg import PythonGenerator as PG
 from components.pg_line import PG_Line
 
 feature_names = [
+    "variables",
     "math",
     "strings",
+    "booleans",
     "containers",
-    "boolean",
-    "variables",
-    "arrays",
+    "indexing",
     "maps",
     "imports",
     "functions",

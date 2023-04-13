@@ -3,13 +3,20 @@ from typing import Self
 
 class PythonGenerator():
 
+    # Singleton
+
+    def __new__(cls) -> Self:        
+        if not hasattr(cls, 'instance'):
+            cls.instance = super().__new__(cls)
+        return cls.instance
+
     def __init__(self: Self, features: dict[str, Feature]) -> None:
         self.features = features
 
+    # Requirement checkers
+
     def on(self: Self, feature_name: str) -> bool:
         return self.features[feature_name].value()
-    
-    # Requirement checkers
 
     def none(self: Self, *features_names: str) -> bool:
         return True

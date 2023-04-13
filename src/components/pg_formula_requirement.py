@@ -10,9 +10,9 @@ class PG_Requirement_Mode(Enum):
 class PG_Formula_Requirement():
 
     req_checkers = {
-        PG_Requirement_Mode.NONE: PythonGenerator.none,
-        PG_Requirement_Mode.ANY: PythonGenerator.any,
-        PG_Requirement_Mode.ALL: PythonGenerator.all,
+        PG_Requirement_Mode.NONE: PythonGenerator().none,
+        PG_Requirement_Mode.ANY: PythonGenerator().any,
+        PG_Requirement_Mode.ALL: PythonGenerator().all,
     }
 
     def __init__(self: Self, reqs: list[str]=[], req_mode: int=PG_Requirement_Mode.ALL) -> None:

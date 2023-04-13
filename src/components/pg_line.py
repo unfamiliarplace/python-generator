@@ -15,11 +15,11 @@ from pg import PythonGenerator
 class PG_Line(PG_Mixin_Generatable, PG_Mixin_Renderable):
 
     patterns = [
-        FP(FR('statements'), 5, FN(PG_Statement)),
-        FP(FR('expressions'), 5, FN(PG_Expression)),
-        FP(FR('symbol_practice'), 1, FN(PG_Symbol_Practice)),
-        FP(FR('real_world'), 3, FN(PG_Real_World)),
-        FP(FR('decorators'), 1, FN(PG_Decorator)),
+        FP(FN(PG_Statement), reqs=FR('statements'), weight=4),
+        FP(FN(PG_Expression), reqs=FR('expressions'), weight=5),
+        FP(FN(PG_Symbol_Practice), reqs=FR('symbol_practice'), weight=1),
+        FP(FN(PG_Real_World), reqs=FR('real_world'), weight=3),
+        FP(FN(PG_Decorator), reqs=FR('decorators'), weight=1),
     ]
 
     def __str__(self: Self) -> str:

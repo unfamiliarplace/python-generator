@@ -4,13 +4,11 @@ from typing import Self
 from components.pg_variable import PG_Variable
 from components.pg_mixin_generatable import PG_Mixin_Generatable
 from components.pg_mixin_renderable import PG_Mixin_Renderable
+from components.pg_formula_node import FN
+from components.pg_formula_pattern import FP
 
 class PG_Assignment(PG_Mixin_Generatable, PG_Mixin_Renderable):
 
-    def generate(self: Self) -> PG_Sequence:
-        # TODO +=, -=, /=, *=, **=, //=, %=
-        # TODO names corresponding to types
-        return PG_Sequence(PG_Variable(), '=', PG_Expression())
-
-    def __str__(self: Self) -> str:
-        return str(self.generate())
+    patterns = [
+        FP(FN(PG_Variable), '=', FN(PG_Expression))
+    ]

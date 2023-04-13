@@ -5,7 +5,7 @@ from typing import Self
 
 class PG_Formula_Pattern():
 
-    def __init__(self: Self, reqs: PG_Formula_Requirement=None, weight: int=1, *nodes: str|PG_Formula_Node) -> None:
+    def __init__(self: Self, *nodes: str|PG_Formula_Node, reqs: PG_Formula_Requirement=None, weight: int=1) -> None:
         self.nodes = nodes
         self.reqs = reqs
         self.weight = weight

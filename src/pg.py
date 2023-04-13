@@ -10,8 +10,9 @@ class PythonGenerator():
             cls.instance = super().__new__(cls)
         return cls.instance
 
-    def __init__(self: Self, features: dict[str, Feature]) -> None:
+    def set_features(self: Self, features: dict[str, Feature]) -> Self:
         self.features = features
+        return self
 
     # Requirement checkers
 

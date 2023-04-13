@@ -33,7 +33,7 @@ for name in feature_names:
 
     features[name] = feature
 
-pg = PG(features)
-line = PG_Line().featurize(pg)
+pg = PG().set_features(features)
+line = PG_Line()
 render = str(line)
 print(render)

@@ -1,6 +1,5 @@
 from feature import Feature
-from pg import PythonGenerator as PG
-from components.pg_line import PG_Line
+import pg
 
 feature_names = [
     "variables",
@@ -8,10 +7,12 @@ feature_names = [
     "strings",
     "booleans",
     "containers",
+    "control",
     "indexing",
     "maps",
     "imports",
     "functions",
+    "methods"
 
     # line types
     "comments",
@@ -22,7 +23,11 @@ feature_names = [
     "real_world"
   ]
 
-disabled = ['containers', 'arrays', 'maps', 'imports', 'functions']
+disabled = ['containers', 'arrays', 'maps', 'imports', 'functions', "comments",
+    "statements",
+    "expressions",
+    "decorators",
+    "symbol_practice",]
 
 features = {}
 
@@ -33,7 +38,7 @@ for name in feature_names:
 
     features[name] = feature
 
-pg = PG().set_features(features)
-line = PG_Line()
+pg.PythonGenerator().set_features(features)
+line = pg.Line()
 render = str(line)
 print(render)

@@ -10,5 +10,5 @@ class Real_World(Mixin_Generatable, Mixin_Renderable):
         fname = R.choose_from(fnames)
 
         with open(f'src/data/{fname}', 'r') as f:
-            lines = f.readlines()
+            lines = list(filter(lambda p: bool(p.strip()), f.readlines()))
             return R.choose_from(lines)

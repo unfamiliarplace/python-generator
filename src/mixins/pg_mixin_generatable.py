@@ -7,13 +7,14 @@ class Mixin_Generatable():
     patterns = []
 
     def possible(self: Self) -> list[pg.Formula_Pattern]:
-        return list(filter(lambda p: p.possible(), self.patterns))
+        return list(filter(lambda p: (type(p) is str) or p.possible(), self.patterns))
 
     def generate(self: Self) -> pg.Formula_Pattern:
         candidates = []
 
         for pattern in self.possible():
-            for _ in range(pattern.weight):
+            weight = 1 if type(pattern) is str else pattern.weight
+            for _ in range(weight):
                 candidates.append(pattern)
 
         return R.choose_from(candidates)

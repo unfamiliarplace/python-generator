@@ -23,11 +23,12 @@ feature_names = [
     "real_world"
   ]
 
-disabled = ['containers', 'arrays', 'maps', 'imports', 'functions', "comments",
-    "statements",
-    "expressions",
-    "decorators",
-    "symbol_practice",]
+disabled = ['maps', 'functions',
+            
+    # "expressions",
+    # "decorators",
+    # "symbol_practice",
+]
 
 features = {}
 

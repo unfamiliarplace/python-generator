@@ -12,7 +12,7 @@ feature_names = [
     "maps",
     "imports",
     "functions",
-    "methods"
+    "methods",
 
     # line types
     "comments",

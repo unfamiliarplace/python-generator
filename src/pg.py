@@ -36,19 +36,51 @@ class PythonGenerator():
         else:
             return True
 
-from mixins.pg_mixin_renderable import Mixin_Renderable
+# Stupid prenames to avoid circular dependencies failing
+
+class Mixin_Generatable: pass
+class Mixin_Renderable: pass
+class Mixin_Renderable_Operation: pass
+
+class Sequence: pass
+class Formula_Node: pass
+class Formula_Requirement: pass
+class Formula_Pattern: pass
 
 from formula.pg_sequence import Sequence
 from formula.pg_formula_node import Formula_Node
 from formula.pg_formula_requirement import Formula_Requirement
 from formula.pg_formula_pattern import Formula_Pattern
 
+from mixins.pg_mixin_generatable import Mixin_Generatable
+from mixins.pg_mixin_renderable import Mixin_Renderable
+from mixins.pg_mixin_renderable_operation import Mixin_Renderable_Operation
+
 FP = Formula_Pattern
 FN = Formula_Node
 FR = Formula_Requirement
 
-from mixins.pg_mixin_generatable import Mixin_Generatable
-from mixins.pg_mixin_renderable_operation import Mixin_Renderable_Operation
+class Boolean: pass
+class Container: pass
+class Float: pass
+class Integer: pass
+class Number: pass
+class String: pass
+class Variable: pass
+class Function_Call: pass
+class Expression: pass
+
+class Control: pass
+class Function_Definition: pass
+class Function_Lambda: pass
+class Import: pass
+class Statement: pass
+
+class Assignment: pass
+class Decorator: pass
+class Real_World: pass
+class Symbol_Practice: pass
+class Line: pass
 
 from expressions.pg_boolean import Boolean
 from expressions.pg_container import Container

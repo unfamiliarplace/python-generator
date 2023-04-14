@@ -1,8 +1,8 @@
 from typing import Iterable, Self
 from js_random import JS_Random as R
-from pg import *
+import pg
 
-class Container(Mixin_Generatable, Mixin_Renderable):
+class Container(pg.Mixin_Generatable, pg.Mixin_Renderable):
 
     def __init__(self: Self, types: str='any') -> None:
         self.types = types

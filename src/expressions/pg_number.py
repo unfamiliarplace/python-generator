@@ -1,8 +1,8 @@
-from pg import *
+import pg
 
-class Number(Mixin_Generatable, Mixin_Renderable):
+class Number(pg.Mixin_Generatable, pg.Mixin_Renderable):
 
     patterns = [
-        FP(FN(Integer), weight=3),
-        FP(FN(Float), weight=1)
+        pg.FP(pg.FN(pg.Integer), weight=3),
+        pg.FP(pg.FN(pg.Float), weight=1)
     ]

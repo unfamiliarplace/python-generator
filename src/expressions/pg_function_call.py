@@ -1,7 +1,7 @@
 from typing import Self
-from pg import *
+import pg
 
-class Function_Call(Mixin_Generatable, Mixin_Renderable):
+class Function_Call(pg.Mixin_Generatable, pg.Mixin_Renderable):
 
     # TODO
     patterns = ['do_nothing()']

@@ -11,8 +11,11 @@ class Formula_Pattern():
     def possible(self: Self) -> bool:
         return self.reqs is None or self.reqs.met()
     
-    def uses(self: Self, cls: type) -> bool:
-        return any(c.component_cls == cls for c in self.nodes)
+    def uses(self: Self, *clses: type) -> bool:
+        for cls in clses:
+            if any(c.component_cls == cls for c in self.nodes):
+                return True
+        return False
     
     def generate(self: Self) -> pg.Sequence:
         """Assumes possible"""

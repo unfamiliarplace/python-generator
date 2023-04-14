@@ -1,8 +1,8 @@
 from typing import Self
-from pg import *
+import pg
 from js_random import JS_Random as R
 
-class Import(Mixin_Generatable, Mixin_Renderable):
+class Import(pg.Mixin_Generatable, pg.Mixin_Renderable):
 
     patterns = [
         'math', 'random', 'itertools', 'functools', 'tkinter', 'PIL', 'nltk', 'pandas', 'numpy', 'turtle', 'sys', 'os', 'urllib', 'requests', 'shutil'

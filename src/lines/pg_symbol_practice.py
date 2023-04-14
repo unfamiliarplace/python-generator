@@ -1,8 +1,8 @@
 from js_random import JS_Random as R
 from typing import Self
-from pg import *
+import pg
 
-class Symbol_Practice(Mixin_Generatable, Mixin_Renderable):
+class Symbol_Practice(pg.Mixin_Generatable, pg.Mixin_Renderable):
     
     symbols = ["!", ":", ",", "()", "[]", "{}", "*", "<", ">", "==", "+", "-", "_", "#", "/", "\\", "//", ".", ";"]
 

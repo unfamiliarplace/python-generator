@@ -1,18 +1,18 @@
-from pg import *
+import pg
 
-class Control(Mixin_Generatable, Mixin_Renderable):
+class Control(pg.Mixin_Generatable, pg.Mixin_Renderable):
 
     patterns = [
         # TODO for i in range(int)
         # TODO for i in range(len(container))
 
-        FP('for', FN(Variable, 'element'), 'in', FN(Container), reqs=FR('containers')),
+        pg.FP('for', pg.FN(pg.Variable, 'element'), 'in', pg.FN(pg.Container), reqs=pg.FR('containers')),
 
         # TODO instead, have container have a variable of type container as a pattern
-        # FP('for', FN(Variable, 'element'), 'in', FN(Variable, 'container'), reqs=FR('containers')),
+        # pg.FP('for', pg.FN(pg.Variable, 'element'), 'in', pg.FN(pg.Variable, 'container'), reqs=pg.FR('containers')),
 
-        FP('while', FN(Boolean)),
-        FP('if', FN(Boolean)),
+        pg.FP('while', pg.FN(pg.Boolean)),
+        pg.FP('if', pg.FN(pg.Boolean)),
 
-        FP('break')
+        pg.FP('break')
     ]

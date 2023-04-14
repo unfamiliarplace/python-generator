@@ -1,8 +1,8 @@
 from typing import Self
 from js_random import JS_Random as R
-from pg import *
+import pg
 
-class Variable(Mixin_Generatable, Mixin_Renderable):
+class Variable(pg.Mixin_Generatable, pg.Mixin_Renderable):
 
     patterns = [
         'integer', 'string', 'float', 'boolean', 'container', 'misc', 'index', 'element', 'placeholder'

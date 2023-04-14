@@ -1,7 +1,7 @@
 from typing import Self
-from pg import *
+import pg
 
-class Decorator(Mixin_Generatable, Mixin_Renderable):
+class Decorator(pg.Mixin_Generatable, pg.Mixin_Renderable):
     patterns = [
         'lru_cache', 'jit', 'count_calls', 'dataclass', 'singleton', 'use_unit', 'staticmethod', 'singledispatch', 'register'
     ]

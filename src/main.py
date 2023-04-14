@@ -24,10 +24,13 @@ feature_names = [
   ]
 
 disabled = ['maps', 'functions',
-            
-    # "expressions",
-    # "decorators",
-    # "symbol_practice",
+    
+    # testing real world
+    "comments",
+    "statements",
+    "expressions",
+    "decorators",
+    "symbol_practice",
 ]
 
 features = {}

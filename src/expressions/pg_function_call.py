@@ -1,10 +1,7 @@
 from typing import Self
-from formula.pg_formula_pattern import Formula_Pattern
-from mixins.pg_mixin_generatable import Mixin_Generatable
-from mixins.pg_mixin_renderable import Mixin_Renderable
+import pg
 
-
-class Function_Call(Mixin_Generatable, Mixin_Renderable):
+class Function_Call(pg.Mixin_Generatable, pg.Mixin_Renderable):
     
     def __init__(self: Self, returns: bool=None, args: list[str]=[], kwargs: dict[str, str]={}) -> None:
         super().__init__()
@@ -12,7 +9,7 @@ class Function_Call(Mixin_Generatable, Mixin_Renderable):
         self.args = args
         self.kwargs = kwargs
 
-    def get_patterns(self: Self) -> list[str|Formula_Pattern]:
+    def get_patterns(self: Self) -> list[str|pg.FP]:
         return [
             'do_nothing()'
         ]

@@ -1,13 +1,11 @@
 from typing import Self
-from formula.pg_formula_pattern import Formula_Pattern
-from mixins.pg_mixin_generatable import Mixin_Generatable
-from mixins.pg_mixin_renderable import Mixin_Renderable
+import pg
 
 from js_random import JS_Random as R
 
-class Import(Mixin_Generatable, Mixin_Renderable):
+class Import(pg.Mixin_Generatable, pg.Mixin_Renderable):
 
-    def get_patterns(self: Self) -> list[str|Formula_Pattern]:
+    def get_patterns(self: Self) -> list[str|pg.FP]:
         return [
             'math', 'random', 'itertools', 'functools', 'tkinter', 'PIL', 'nltk', 'pandas', 'numpy', 'turtle', 'sys', 'os', 'urllib', 'requests', 'shutil'
         ]

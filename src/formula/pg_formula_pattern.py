@@ -1,12 +1,9 @@
-from formula.pg_formula_node import Formula_Node
-from formula.pg_formula_requirement import Formula_Requirement
-from formula.pg_sequence import Sequence
-
+import pg
 from typing import Self
 
 class Formula_Pattern():
 
-    def __init__(self: Self, *nodes: str|Formula_Node, reqs: Formula_Requirement=None, weight: int=1) -> None:
+    def __init__(self: Self, *nodes: str|pg.FN, reqs: pg.Formula_Requirement=None, weight: int=1) -> None:
         self.nodes = nodes
         self.reqs = reqs
         self.weight = weight
@@ -20,9 +17,9 @@ class Formula_Pattern():
                 return True
         return False
     
-    def generate(self: Self) -> Sequence:
+    def generate(self: Self) -> pg.Sequence:
         """Assumes possible"""
-        return Sequence(*(str(c) for c in self.nodes))
+        return pg.Sequence(*(str(c) for c in self.nodes))
         
     def __str__(self: Self) -> str:
         """Assumes possible"""

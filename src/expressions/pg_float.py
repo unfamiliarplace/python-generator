@@ -6,43 +6,41 @@ from formula.pg_formula_pattern import FP, Formula_Pattern
 from formula.pg_formula_requirement import FR
 from js_random import JS_Random as R
 from typing import Self
-from mixins.pg_mixin_generatable import Mixin_Generatable
-from mixins.pg_mixin_renderable import Mixin_Renderable
-from mixins.pg_mixin_renderable_operation import Mixin_Renderable_Operation
+import pg
 
 
-class Float(Mixin_Generatable, Mixin_Renderable):
-    def get_patterns(self: Self) -> list[str|Formula_Pattern]:
+class Float(pg.Mixin_Generatable, pg.Mixin_Renderable):
+    def get_patterns(self: Self) -> list[str|pg.FP]:
         return [
-            FP(FN(Float_Literal), weight=4),
-            FP(FN(Float_Operation), weight=1),
-            FP(FN(Function_Call, args=[True, 'float']), weight=1, reqs=FR('functions')),
-            FP(FN(Variable, 'float'), weight=2, reqs=FR('variables')),
+            pg.FP(pg.FN(Float_Literal), weight=4),
+            pg.FP(pg.FN(Float_Operation), weight=1),
+            pg.FP(pg.FN(Function_Call, args=[True, 'float']), weight=1, reqs=pg.FR('functions')),
+            pg.FP(pg.FN(Variable, 'float'), weight=2, reqs=pg.FR('variables')),
             # TODO function float(number, bool, string???, input???)
         ]
 
-class Float_Operation(Mixin_Generatable, Mixin_Renderable_Operation):
-    def get_patterns(self: Self) -> list[str|Formula_Pattern]:
+class Float_Operation(pg.Mixin_Generatable, pg.Mixin_Renderable_Operation):
+    def get_patterns(self: Self) -> list[str|pg.FP]:
         return [
-            FP(FN(Number), '+', FN(Float), weight=3),
-            FP(FN(Float), '+', FN(Number), weight=3),
+            pg.FP(pg.FN(Number), '+', pg.FN(Float), weight=3),
+            pg.FP(pg.FN(Float), '+', pg.FN(Number), weight=3),
 
-            FP(FN(Number), '-', FN(Float), weight=3),
-            FP(FN(Float), '-', FN(Number), weight=3),
+            pg.FP(pg.FN(Number), '-', pg.FN(Float), weight=3),
+            pg.FP(pg.FN(Float), '-', pg.FN(Number), weight=3),
 
-            FP(FN(Number), '*', FN(Float), weight=2),
-            FP(FN(Float), '*', FN(Number), weight=2),
+            pg.FP(pg.FN(Number), '*', pg.FN(Float), weight=2),
+            pg.FP(pg.FN(Float), '*', pg.FN(Number), weight=2),
 
-            FP(FN(Number), '/', FN(Number), weight=2),
+            pg.FP(pg.FN(Number), '/', pg.FN(Number), weight=2),
 
-            FP(FN(Number), '//', FN(Float), weight=2),
-            FP(FN(Float), '//', FN(Number), weight=2),
+            pg.FP(pg.FN(Number), '//', pg.FN(Float), weight=2),
+            pg.FP(pg.FN(Float), '//', pg.FN(Number), weight=2),
 
-            FP(FN(Number), '**', FN(Float)),
-            FP(FN(Float), '**', FN(Number)),
+            pg.FP(pg.FN(Number), '**', pg.FN(Float)),
+            pg.FP(pg.FN(Float), '**', pg.FN(Number)),
         ]
 
-class Float_Literal(Mixin_Generatable, Mixin_Renderable):
+class Float_Literal(pg.Mixin_Generatable, pg.Mixin_Renderable):
 
     def __init__(self: Self, lower: int=-50, upper: int=100) -> None:
         self.lower = lower

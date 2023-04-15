@@ -1,5 +1,6 @@
 from feature import Feature
-import pg
+from pg import PythonGenerator
+from lines.pg_line import Line
 
 feature_names = [
     "variables",
@@ -42,7 +43,7 @@ for name in feature_names:
 
     features[name] = feature
 
-pg.PythonGenerator().set_features(features)
-line = pg.Line()
+PythonGenerator().set_features(features)
+line = Line()
 render = str(line)
 print(render)

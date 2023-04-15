@@ -1,9 +1,9 @@
 from js_random import JS_Random as R
 from typing import Self
-import pg
+
 import os
 
-class Real_World(pg.Mixin_Generatable, pg.Mixin_Renderable):
+class Real_World(Mixin_Generatable, Mixin_Renderable):
 
     def generate(self: Self) -> str:
         fnames = list(os.walk('data'))[0][2]

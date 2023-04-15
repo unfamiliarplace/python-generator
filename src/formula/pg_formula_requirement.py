@@ -1,6 +1,7 @@
-import pg
+
 from typing import Self
 from enum import Enum
+from pg import PythonGenerator
 
 class Requirement_Mode(Enum):
     NONE = 0
@@ -10,9 +11,9 @@ class Requirement_Mode(Enum):
 class Formula_Requirement():
 
     req_checkers = {
-        Requirement_Mode.NONE: pg.PythonGenerator().none,
-        Requirement_Mode.ANY: pg.PythonGenerator().any,
-        Requirement_Mode.ALL: pg.PythonGenerator().all,
+        Requirement_Mode.NONE: PythonGenerator().none,
+        Requirement_Mode.ANY: PythonGenerator().any,
+        Requirement_Mode.ALL: PythonGenerator().all,
     }
 
     def __init__(self: Self, *reqs: str, req_mode: int=Requirement_Mode.ALL) -> None:
@@ -24,3 +25,6 @@ class Formula_Requirement():
     
     def met(self: Self) -> bool:
         return self.req_checkers[self.req_mode](*self.reqs)
+
+# Short name
+FR = Formula_Requirement

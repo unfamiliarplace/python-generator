@@ -3,10 +3,16 @@ from typing import Self
 
 class Formula_Pattern():
 
-    def __init__(self: Self, *nodes: str|pg.FN, reqs: pg.Formula_Requirement=None, weight: int=1) -> None:
+    def __init__(self: Self, *nodes: str|pg.FN, reqs: pg.Formula_Requirement=None, weight: int=1, brackets: bool=False, prefix: str='', suffix: str='') -> None:
         self.nodes = nodes
         self.reqs = reqs
         self.weight = weight
+        self.brackets = brackets
+        self.prefix = prefix
+        self.suffix = suffix
+
+        self.bracket_open = '(' if self.brackets else ''
+        self.bracket_close = '(' if self.brackets else ''
 
     def possible(self: Self) -> bool:
         return self.reqs is None or self.reqs.met()
@@ -18,12 +24,11 @@ class Formula_Pattern():
         return False
     
     def generate(self: Self) -> pg.Sequence:
-        """Assumes possible"""
         return pg.Sequence(*(str(c) for c in self.nodes))
         
     def __str__(self: Self) -> str:
-        """Assumes possible"""
-        return str(self.generate())
+        s = self.generate()
+        return f'{self.prefix}{self.bracket_open}{s}{self.bracket_close}{self.suffix}'
 
 # Short name
 FP = Formula_Pattern

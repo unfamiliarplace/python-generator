@@ -9,21 +9,16 @@ class Control(pg.Mixin_Generatable, pg.Mixin_Renderable):
         # TODO for i in range(int)
         # TODO for i in range(len(container))
 
-        pg.FP('for', pg.FN(pg.Variable, 'element'), 'in', pg.FN(pg.Container), reqs=pg.FR('containers')),
+        pg.FP('for', pg.FN(pg.Variable, 'element'), 'in', pg.FN(pg.Container), reqs=pg.FR('containers'), suffix=':'),
 
-        # TODO instead, have container have a variable of type container as a pattern
-        # pg.FP('for', pg.FN(Variable, 'element'), 'in', pg.FN(Variable, 'container'), reqs=pg.FR('containers')),
-
-        pg.FP('while', pg.FN(pg.Boolean)),
+        pg.FP('while', pg.FN(pg.Boolean), suffix=':'),
         pg.FP('break'),
 
-        pg.FP('if', pg.FN(pg.Boolean)),
-        pg.FP('elif', pg.FN(pg.Boolean)),
-        pg.FP('else'),
+        pg.FP('if', pg.FN(pg.Boolean), suffix=':'),
+        pg.FP('elif', pg.FN(pg.Boolean), suffix=':'),
+        pg.FP('else', suffix=':'),
 
-        pg.FP('try'),
-        pg.FP('except'),
-        pg.FP('except', pg.FN(pg.Exception)),
-        
-        pg.FP('assert', pg.FN(pg.Boolean)),
+        pg.FP('try', suffix=':'),
+        pg.FP('except', suffix=':'),
+        pg.FP('except', pg.FN(pg.Exception), suffix=':'),
     ]

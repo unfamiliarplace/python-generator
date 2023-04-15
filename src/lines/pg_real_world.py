@@ -13,4 +13,10 @@ class Real_World(pg.Mixin_Generatable, pg.Mixin_Renderable):
         with open(f'data/{fname}', 'r') as f:
             lines = list(filter(lambda p: bool(p.strip()), f.readlines()))
             line = R.choose_from(lines)
-            return line.strip() # very hard to count number of spaces
+
+            # typability
+            line = line.strip()
+            while '  ' in line:
+                line = line.replace('  ', ' ')
+
+            return line

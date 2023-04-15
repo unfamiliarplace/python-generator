@@ -32,8 +32,8 @@ class Boolean_Operation(pg.Mixin_Generatable, pg.Mixin_Renderable_Operation):
 class Boolean_Literal(pg.Mixin_Generatable, pg.Mixin_Renderable):
     def get_patterns(self: Self) -> list[str|pg.FP]:
         return [
-            pg.FP(pg.FN('True'), weight=20),
-            pg.FP(pg.FN('False'), weight=20),
+            pg.FP('True', weight=20),
+            pg.FP('False', weight=20),
             pg.FP(pg.FN(Boolean_Operation), weight=10),
             # TODO function bool(pg.Expression)
         ]

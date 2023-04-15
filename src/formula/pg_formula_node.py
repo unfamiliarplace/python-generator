@@ -4,7 +4,7 @@ from typing import Self
 
 class Formula_Node():
 
-    def __init__(self: Self, component_cls: type, args: list=[], kwargs: dict={}) -> None:
+    def __init__(self: Self, component_cls: type, *args, **kwargs) -> None:
         self.component_cls = component_cls
         self.args = args
         self.kwargs = kwargs

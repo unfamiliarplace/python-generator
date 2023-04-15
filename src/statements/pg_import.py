@@ -7,7 +7,9 @@ class Import(pg.Mixin_Generatable, pg.Mixin_Renderable):
 
     def get_patterns(self: Self) -> list[str|pg.FP]:
         return [
-            'math', 'random', 'itertools', 'functools', 'tkinter', 'PIL', 'nltk', 'pandas', 'numpy', 'turtle', 'sys', 'os', 'urllib', 'requests', 'shutil'
+            'math', 'random', 'itertools', 'functools', 'tkinter', 'PIL',
+            'nltk', 'pandas', 'numpy', 'turtle', 'sys', 'os', 'urllib', 'requests', 'shutil',
+            'time', 'timeit', 'datetime',
         ]
 
     lib_to_names = {

@@ -1,11 +1,14 @@
 from typing import Self
+import pg
 
 class Mixin_Renderable():
 
     def __str__(self: Self) -> str:
-        return ''
+        if hasattr(self, 'generate'):
+            return str(self.generate())
+        else:
+            return ''
 
     def render(self: Self) -> str:
         """Alias of str."""
         return str(self)
-        

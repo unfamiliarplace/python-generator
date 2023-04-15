@@ -15,10 +15,7 @@ LETTERS = {
     '9': set('WXYZ'),
 }
 
-prompt = """Enter a phone number, or any series of digits. Any format is OK.
-Zero and one are turned to spaces for fun, but should not be used in practice,
-because there is no way to communicate that a space came from a 0 or 1.
-Enter here: """
+prompt = """Enter here: """
 
 no_words = set()
 

@@ -36,6 +36,8 @@ class PythonGenerator():
         else:
             return True
 
+# Stupid to avoid import circularity...
+
 from mixins.pg_mixin_renderable import Mixin_Renderable
 from mixins.pg_mixin_renderable_operation import Mixin_Renderable_Operation
 
@@ -55,6 +57,7 @@ from expressions.pg_string import String
 from expressions.pg_variable import Variable
 from expressions.pg_function_call import Function_Call
 from expressions.pg_expression import Expression
+from expressions.pg_exception import Exception
 
 from statements.pg_control import Control
 from statements.pg_function_definition import Function_Definition

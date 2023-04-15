@@ -18,7 +18,8 @@ class Variable(pg.Mixin_Generatable, pg.Mixin_Renderable):
         'misc': ['x', 'y', 'z', 'a', 'b', 'c', 'value', 'key'],
         'index': ['i', 'j', 'k'],
         'element': ['item', 'elem', 'element', 'val', '_'],
-        'placeholder': ['_']
+        'placeholder': ['_'],
+        'special': ['__name__', '__main__']
     }
 
     def __init__(self: Self, type: str='any') -> None:
@@ -33,4 +34,10 @@ class Variable(pg.Mixin_Generatable, pg.Mixin_Renderable):
 
     def generate(self: Self) -> str:
         type_ = self.type if self.type != 'any' else super().generate()
-        return R.choose_from(self.type_to_names[type_])
+        name = R.choose_from(self.type_to_names[type_])
+
+        # Constant?
+        if R.flip_coin(0.1):
+            return name.upper()
+        else:
+            return name

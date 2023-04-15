@@ -14,6 +14,8 @@ feature_names = [
     "imports",
     "functions",
     "methods",
+    "classes",
+    "files",
 
     # line types
     "comments",
@@ -24,7 +26,7 @@ feature_names = [
     "real_world"
   ]
 
-disabled = ['maps', 'functions',
+disabled = ['maps', 'functions', 'classes', 'files',
     
     # testing real world
     "comments",

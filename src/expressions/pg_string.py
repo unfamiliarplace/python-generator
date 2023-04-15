@@ -1,9 +1,3 @@
-from expressions.pg_function_call import Function_Call
-from expressions.pg_integer import Integer
-from expressions.pg_variable import Variable
-from formula.pg_formula_node import FN
-from formula.pg_formula_pattern import FP, Formula_Pattern
-from formula.pg_formula_requirement import FR
 from js_random import JS_Random as R
 from typing import Self
 import pg
@@ -14,8 +8,8 @@ class String(pg.Mixin_Generatable, pg.Mixin_Renderable):
         return [
             pg.FP(pg.FN(String_Literal), weight=4),
             pg.FP(pg.FN(String_Operation), weight=1),
-            pg.FP(pg.FN(Function_Call, [True, 'string']), weight=1, reqs=pg.FR('functions')),
-            pg.FP(pg.FN(Variable, 'string'), weight=2, reqs=pg.FR('variables')),
+            pg.FP(pg.FN(pg.Function_Call, [True, 'string']), weight=1, reqs=pg.FR('functions')),
+            pg.FP(pg.FN(pg.Variable, 'string'), weight=2, reqs=pg.FR('variables')),
             # TODO function str(number, bool, string???, input???)
         ]
 
@@ -23,8 +17,8 @@ class String_Operation(pg.Mixin_Generatable, pg.Mixin_Renderable_Operation):
     def get_patterns(self: Self) -> list[str|pg.FP]:
         return [
             pg.FP(pg.FN(String), '+', pg.FN(String), weight=3),
-            pg.FP(pg.FN(Integer), '*', pg.FN(String), weight=1),
-            pg.FP(pg.FN(String), '*', pg.FN(Integer), weight=1),
+            pg.FP(pg.FN(pg.Integer), '*', pg.FN(String), weight=1),
+            pg.FP(pg.FN(String), '*', pg.FN(pg.Integer), weight=1),
         ]
 
 class String_Literal(pg.Mixin_Generatable, pg.Mixin_Renderable):

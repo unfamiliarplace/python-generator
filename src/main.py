@@ -26,15 +26,7 @@ feature_names = [
     "real_world"
   ]
 
-disabled = ['maps', 'functions', 'classes', 'files',
-    
-    # testing real world
-    "comments",
-    "statements",
-    "expressions",
-    "decorators",
-    "symbol_practice",
-]
+disabled = ['maps', 'functions', 'classes', 'files', 'containers']
 
 features = {}
 

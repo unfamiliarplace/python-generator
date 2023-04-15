@@ -29,6 +29,7 @@ class Import(pg.Mixin_Generatable, pg.Mixin_Renderable):
     def __str__(self: Self) -> str:
         lib = self.generate()
         has_name = lib in self.lib_to_names
+        append = ''
 
         if has_name and R.flip_coin(.2):
             name = R.choose_from(self.lib_to_names[lib])

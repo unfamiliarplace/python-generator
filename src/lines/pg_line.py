@@ -11,12 +11,5 @@ class Line(pg.Mixin_Generatable, pg.Mixin_Renderable):
             pg.FP(pg.FN(pg.Symbol_Practice), reqs=pg.FR('symbol_practice'), weight=1),
             pg.FP(pg.FN(pg.Real_World), reqs=pg.FR('real_world'), weight=3),
             pg.FP(pg.FN(pg.Decorator), reqs=pg.FR('decorators'), weight=1),
+            pg.FP(pg.FN(pg.Comment), reqs=pg.FR('comments'), weight=2),
         ]
-
-    def __str__(self: Self) -> str:
-        pattern = self.generate()
-        s = str(pattern)
-        if pg.PythonGenerator().on('comments') and R.flip_coin(0.2):
-            if not pattern.uses(pg.Symbol_Practice, pg.Real_World):
-                s = '# ' + s
-        return s

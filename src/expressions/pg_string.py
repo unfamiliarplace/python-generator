@@ -8,7 +8,7 @@ class String(pg.Mixin_Generatable, pg.Mixin_Renderable):
         return [
             pg.FP(pg.FN(String_Literal), weight=4),
             pg.FP(pg.FN(String_Operation), weight=1),
-            pg.FP(pg.FN(pg.Function_Call, [True, 'string']), weight=1, reqs=pg.FR('functions')),
+            pg.FP(pg.FN(pg.Function_Call, [pg.Return_Type.STR]), weight=1, reqs=pg.FR('functions')),
             pg.FP(pg.FN(pg.Variable, 'string'), weight=2, reqs=pg.FR('variables')),
             # TODO function str(number, bool, string???, input???)
         ]

@@ -6,8 +6,9 @@ class Boolean(pg.Mixin_Generatable, pg.Mixin_Renderable):
         return [
             pg.FP(pg.FN(Boolean_Literal), weight=3),
             pg.FP(pg.FN(Boolean_Operation), weight=1),
-            pg.FP(pg.FN(pg.Function_Call, args=[True, 'boolean']), weight=1, reqs=pg.FR('functions')),
-            pg.FP(pg.FN(pg.Variable, 'boolean'), weight=2, reqs=pg.FR('booleans'))
+            pg.FP(pg.FN(pg.Function_Call, args=[pg.Return_Type.BOOL]), weight=1, reqs=pg.FR('functions')),
+            pg.FP(pg.FN(pg.Variable, 'boolean'), weight=2, reqs=pg.FR('booleans')),
+            # TODO function bool(expression) ?
         ]
 
 class Boolean_Operation(pg.Mixin_Generatable, pg.Mixin_Renderable_Operation):
@@ -32,8 +33,6 @@ class Boolean_Operation(pg.Mixin_Generatable, pg.Mixin_Renderable_Operation):
 class Boolean_Literal(pg.Mixin_Generatable, pg.Mixin_Renderable):
     def get_patterns(self: Self) -> list[str|pg.FP]:
         return [
-            pg.FP('True', weight=20),
-            pg.FP('False', weight=20),
-            pg.FP(pg.FN(Boolean_Operation), weight=10),
-            # TODO function bool(pg.Expression)
+            pg.FP('True'),
+            pg.FP('False'),
         ]

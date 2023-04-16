@@ -9,7 +9,7 @@ class Integer(pg.Mixin_Generatable, pg.Mixin_Renderable):
         return [
             pg.FP(pg.FN(Integer_Literal), weight=4),
             pg.FP(pg.FN(Integer_Operation), weight=1),
-            pg.FP(pg.FN(pg.Function_Call, args=[True, 'integer']), weight=1, reqs=pg.FR('functions')),
+            pg.FP(pg.FN(pg.Function_Call, args=[pg.Return_Type.INT]), weight=1, reqs=pg.FR('functions')),
             pg.FP(pg.FN(pg.Variable, 'integer'), weight=2, reqs=pg.FR('variables')),
             # TODO function int(number, bool, string???, input???)
         ]

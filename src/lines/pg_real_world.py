@@ -7,10 +7,10 @@ import os
 class Real_World(pg.Mixin_Generatable, pg.Mixin_Renderable):
 
     def generate(self: Self) -> str:
-        fnames = list(os.walk('data'))[0][2]
+        fnames = list(os.walk('data/real_world'))[0][2]
         fname = R.choose_from(fnames)
 
-        with open(f'data/{fname}', 'r') as f:
+        with open(f'data/real_world/{fname}', 'r') as f:
             lines = list(filter(lambda p: bool(p.strip()), f.readlines()))
             line = R.choose_from(lines)
 

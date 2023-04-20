@@ -14,6 +14,13 @@ class PythonGenerator():
         self.features = features
         return self
 
+    def generate(self: Self, features: dict[str, Feature]=None) -> str:
+        if features is not None:
+            self.set_features(features)
+        
+        return str(Line())
+        
+
     # Requirement checkers
 
     def on(self: Self, feature_name: str) -> bool:

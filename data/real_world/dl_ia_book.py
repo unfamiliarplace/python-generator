@@ -22,20 +22,6 @@ stem_data = {
     'rotate'    : '0'
 }
 
-stem2 = "https://ia903205.us.archive.org/BookReader/BookReaderImages.php?zip=/13/items/seizeday0000bell_x5c5/seizeday0000bell_x5c5_jp2.zip&file=seizeday0000bell_x5c5_jp2/seizeday0000bell_x5c5_0008.jp2&id=seizeday0000bell_x5c5&scale=2&rotate=0"
-stem2 = "id=seizeday0000bell_x5c5&scale=2&rotate=0"
-
-stem2_host = 'https://ia903205.us.archive.org'
-stem2_dir = 'BookReader/BookReaderImages.php'
-stem2_data = {
-    'zip'       : '/13/items/seizeday0000bell_x5c5/seizeday0000bell_x5c5_jp2.zip',
-    'file'      : f'seizeday0000bell_x5c5_jp2/seizeday0000bell_x5c5_{placeholder}.jp2',
-    'id'        : 'id=seizeday0000bell_x5c5',
-    'scale'     : '1',
-    'rotate'    : '0'
-}
-
-
 def construct_url(n: int) -> str:
     url = f'{stem_host}/{stem_dir}'
     data = stem_data.copy()

@@ -1,4 +1,3 @@
-from js_random import JS_Random as R
 from typing import Self
 import pg
 

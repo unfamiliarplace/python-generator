@@ -1,9 +1,6 @@
 from typing import Self
 
 class Feature():
-    _name: str
-    _value: bool
-    _disabled: bool
 
     def __init__(self: Self, name: str) -> None:
         self._name = name

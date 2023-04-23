@@ -2,16 +2,15 @@ from typing import Iterable, Self
 from js_random import JS_Random as R
 import pg
 
-
 class Container(pg.Mixin_Generatable, pg.Mixin_Renderable):
 
     def __init__(self: Self, types: str='any') -> None:
         self.types = types
 
-    def generate(self: Self) -> Iterable:
+    def generate(self: Self) -> str:
         # TODO
         values = [1, 2, 3]
-        return values
+        return str(values)[1:-1]
     
     def __str__(self: Self) -> str:
         s = ', '.join(self.generate())
@@ -23,4 +22,4 @@ class Container(pg.Mixin_Generatable, pg.Mixin_Renderable):
             return f'({s})'
         
         else:
-            return f'{{{s}}}'
+            return  "{" + s + "}" # Transcrypt can't handle f'{{{}}}'

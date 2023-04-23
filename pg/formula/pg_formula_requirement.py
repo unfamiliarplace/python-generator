@@ -1,22 +1,23 @@
 
 from typing import Self
-from enum import Enum
 import pg
 
-class Requirement_Mode(Enum):
+class Requirement_Mode():
     NONE = 0
     ANY = 1
     ALL = 2
 
+RM = Requirement_Mode
+
 class Formula_Requirement():
 
     req_checkers = {
-        Requirement_Mode.NONE: pg.PythonGenerator().none,
-        Requirement_Mode.ANY: pg.PythonGenerator().any,
-        Requirement_Mode.ALL: pg.PythonGenerator().all,
+        RM.NONE: pg.PythonGenerator().none,
+        RM.ANY: pg.PythonGenerator().any,
+        RM.ALL: pg.PythonGenerator().all,
     }
 
-    def __init__(self: Self, *reqs: str, req_mode: int=Requirement_Mode.ALL) -> None:
+    def __init__(self: Self, *reqs: str, req_mode: int=RM.ALL) -> None:
 
         # TODO in order for this to work we need to access the instantiated PG not the static class
 

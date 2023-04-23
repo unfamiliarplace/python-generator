@@ -8,7 +8,7 @@ class Float(pg.Mixin_Generatable, pg.Mixin_Renderable):
         return [
             pg.FP(pg.FN(Float_Literal), weight=4),
             pg.FP(pg.FN(Float_Operation), weight=1),
-            pg.FP(pg.FN(pg.Function_Call, args=[pg.Return_Type.FLOAT]), weight=1, reqs=pg.FR('functions')),
+            pg.FP(pg.FN(pg.Function_Call, args=[pg.RT.FLOAT]), weight=1, reqs=pg.FR('functions')),
             pg.FP(pg.FN(pg.Variable, 'float'), weight=2, reqs=pg.FR('variables')),
             # TODO function float(number, bool, string???, input???)
         ]

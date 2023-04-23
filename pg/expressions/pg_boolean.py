@@ -6,7 +6,7 @@ class Boolean(pg.Mixin_Generatable, pg.Mixin_Renderable):
         return [
             pg.FP(pg.FN(Boolean_Literal), weight=3),
             pg.FP(pg.FN(Boolean_Operation), weight=1),
-            pg.FP(pg.FN(pg.Function_Call, args=[pg.Return_Type.BOOL]), weight=1, reqs=pg.FR('functions')),
+            pg.FP(pg.FN(pg.Function_Call, args=[pg.RT.BOOL]), weight=1, reqs=pg.FR('functions')),
             pg.FP(pg.FN(pg.Variable, 'boolean'), weight=2, reqs=pg.FR('booleans')),
             # TODO function bool(expression) ?
         ]

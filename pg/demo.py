@@ -1,7 +1,7 @@
 if __name__ == '__main__':
 
   from feature import Feature
-  from __main__ import PythonGenerator
+  from pg import PythonGenerator
   from lines.pg_line import Line
 
   feature_names = [

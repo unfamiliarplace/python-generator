@@ -9,7 +9,7 @@ class PythonGenerator():
             cls.instance = super().__new__(cls)
         return cls.instance
 
-    def set_features(self, features: dict[str, Feature]) -> Self:
+    def set_features(self, features: dict[str, Feature]):
         self.features = features
         return self
 

@@ -2,6 +2,7 @@
 from typing import Self
 import pg
 from js_random import JS_Random as R
+from data.comments.comment_lines import COMMENT_LINES
 
 class Comment(pg.Mixin_Generatable, pg.Mixin_Renderable):
 
@@ -39,8 +40,7 @@ class Comment(pg.Mixin_Generatable, pg.Mixin_Renderable):
         if R.flip_coin(0.001):
             return '# TODO'
         else:
-            with open('data/comments/comments.txt', 'r', encoding='utf-8') as f:          
-                return R.choose_from(list(f.readlines())).strip()
+            return R.choose_from(COMMENT_LINES)
 
     def _generate_type_3(self: Self) -> str:
         """line of code # English comment"""

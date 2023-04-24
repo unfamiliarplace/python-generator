@@ -1,10 +1,9 @@
 from js_random import JS_Random as R
-from typing import Self
 import pg
 
 
 class String(pg.Mixin_Generatable, pg.Mixin_Renderable):
-    def get_patterns(self: Self) -> list[str|pg.FP]:
+    def get_patterns(self) -> list[str|pg.FP]:
         return [
             pg.FP(pg.FN(String_Literal), weight=4),
             pg.FP(pg.FN(String_Operation), weight=1),
@@ -14,7 +13,7 @@ class String(pg.Mixin_Generatable, pg.Mixin_Renderable):
         ]
 
 class String_Operation(pg.Mixin_Generatable, pg.Mixin_Renderable_Operation):
-    def get_patterns(self: Self) -> list[str|pg.FP]:
+    def get_patterns(self) -> list[str|pg.FP]:
         return [
             pg.FP(pg.FN(String), '+', pg.FN(String), weight=5),
             pg.FP(pg.FN(pg.Integer, 0, 100), '*', pg.FN(String), weight=1),
@@ -26,7 +25,7 @@ class String_Literal(pg.Mixin_Generatable, pg.Mixin_Renderable):
     words = ";hello;world;day;find;eat;student;huge;goodbye;math;english;physics;chemistry;biology;french;stem;art;drama;music;geography;history;philosophy;cs;eblock;aps;periwinkle;first;second;violin;piano;sun;snow;rain;sleet;hail;fog;breeze;a;b;c;d;e;f;g;h;i;j;k;l;m;n;o;p;q;r;s;t;u;v;w;x;y;z;foo;bar;baz;mark;matthew;luke;john;sawczak;groot;kim;robinson;peters;van schepen;dykxhoorn;hoving;petrusma;gretton;brown;black;red;fuchsia;green;yellow;white;grey;black;blue;teal;turquoise;purple;violet;indigo;orange;gold;forest;beach;hills;mountains;desert;plains;prairie;sky"
     words = words.split(';')
 
-    def generate(self: Self) -> str:
+    def generate(self) -> str:
         s = R.choose_from(self.words)
         n = 1
         chance = 0.5
@@ -38,7 +37,7 @@ class String_Literal(pg.Mixin_Generatable, pg.Mixin_Renderable):
         
         return s  
 
-    def __str__(self: Self) -> str:
+    def __str__(self) -> str:
         s = self.generate()
         q = "'"
         if R.flip_coin(0.5):

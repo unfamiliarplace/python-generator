@@ -1,10 +1,9 @@
 from js_random import JS_Random as R
-from typing import Self
 import pg
 
 
 class Float(pg.Mixin_Generatable, pg.Mixin_Renderable):
-    def get_patterns(self: Self) -> list[str|pg.FP]:
+    def get_patterns(self) -> list[str|pg.FP]:
         return [
             pg.FP(pg.FN(Float_Literal), weight=4),
             pg.FP(pg.FN(Float_Operation), weight=1),
@@ -14,7 +13,7 @@ class Float(pg.Mixin_Generatable, pg.Mixin_Renderable):
         ]
 
 class Float_Operation(pg.Mixin_Generatable, pg.Mixin_Renderable_Operation):
-    def get_patterns(self: Self) -> list[str|pg.FP]:
+    def get_patterns(self) -> list[str|pg.FP]:
         return [
             pg.FP(pg.FN(pg.Number), '+', pg.FN(Float), weight=3),
             pg.FP(pg.FN(Float), '+', pg.FN(pg.Number), weight=3),
@@ -36,9 +35,9 @@ class Float_Operation(pg.Mixin_Generatable, pg.Mixin_Renderable_Operation):
 
 class Float_Literal(pg.Mixin_Generatable, pg.Mixin_Renderable):
 
-    def __init__(self: Self, lower: int=-50, upper: int=100) -> None:
+    def __init__(self, lower: int=-50, upper: int=100) -> None:
         self.lower = lower
         self.upper = upper
 
-    def generate(self: Self) -> float:
+    def generate(self) -> float:
         return R.number_between(self.lower, self.upper, True)

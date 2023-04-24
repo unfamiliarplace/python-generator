@@ -1,8 +1,7 @@
-from typing import Self
 import pg
 
 class Boolean(pg.Mixin_Generatable, pg.Mixin_Renderable):
-    def get_patterns(self: Self) -> list[str|pg.FP]:
+    def get_patterns(self) -> list[str|pg.FP]:
         return [
             pg.FP(pg.FN(Boolean_Literal), weight=3),
             pg.FP(pg.FN(Boolean_Operation), weight=1),
@@ -12,7 +11,7 @@ class Boolean(pg.Mixin_Generatable, pg.Mixin_Renderable):
         ]
 
 class Boolean_Operation(pg.Mixin_Generatable, pg.Mixin_Renderable_Operation):
-    def get_patterns(self: Self) -> list[str|pg.FP]:
+    def get_patterns(self) -> list[str|pg.FP]:
         return [
             pg.FP(pg.FN(Boolean), 'and', pg.FN(Boolean), weight=3),
             pg.FP(pg.FN(Boolean), 'or', pg.FN(Boolean), weight=3),
@@ -31,7 +30,7 @@ class Boolean_Operation(pg.Mixin_Generatable, pg.Mixin_Renderable_Operation):
         ]
 
 class Boolean_Literal(pg.Mixin_Generatable, pg.Mixin_Renderable):
-    def get_patterns(self: Self) -> list[str|pg.FP]:
+    def get_patterns(self) -> list[str|pg.FP]:
         return [
             pg.FP('True'),
             pg.FP('False'),

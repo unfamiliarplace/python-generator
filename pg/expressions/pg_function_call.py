@@ -1,4 +1,3 @@
-from typing import Self
 import pg
 
 # Return types
@@ -15,13 +14,13 @@ RT = Return_Type
 
 class Function_Call(pg.Mixin_Generatable, pg.Mixin_Renderable):
     
-    def __init__(self: Self, return_type: int=RT.ANY, args: list[str]=[], kwargs: dict[str, str]={}) -> None:
+    def __init__(self, return_type: int=RT.ANY, args: list[str]=[], kwargs: dict[str, str]={}) -> None:
         super().__init__()
         self.return_type = return_type
         self.args = args
         self.kwargs = kwargs
 
-    def get_patterns(self: Self) -> list[str|pg.FP]:
+    def get_patterns(self) -> list[str|pg.FP]:
         return [
             'do_nothing()'
         ]

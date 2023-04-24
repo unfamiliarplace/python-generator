@@ -1,11 +1,10 @@
-from typing import Self
 import pg
 
 from js_random import JS_Random as R
 
 class Import(pg.Mixin_Generatable, pg.Mixin_Renderable):
 
-    def get_patterns(self: Self) -> list[str|pg.FP]:
+    def get_patterns(self) -> list[str|pg.FP]:
         return [
             'math', 'random', 'itertools', 'functools', 'tkinter', 'PIL',
             'nltk', 'pandas', 'numpy', 'turtle', 'sys', 'os', 'urllib', 'requests', 'shutil',
@@ -26,7 +25,7 @@ class Import(pg.Mixin_Generatable, pg.Mixin_Renderable):
         'requests': ['get'],
     }
 
-    def __str__(self: Self) -> str:
+    def __str__(self) -> str:
         lib = self.generate()
         has_name = lib in self.lib_to_names
         append = ''

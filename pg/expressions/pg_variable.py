@@ -1,4 +1,3 @@
-from typing import Self
 from js_random import JS_Random as R
 import pg
 
@@ -22,17 +21,17 @@ class Variable(pg.Mixin_Generatable, pg.Mixin_Renderable):
         'special': ['__name__', '__main__']
     }
 
-    def __init__(self: Self, type: str='any') -> None:
+    def __init__(self, type: str='any') -> None:
         super().__init__()
         self.type = type
 
     
-    def get_patterns(self: Self) -> list[str|pg.FP]:
+    def get_patterns(self) -> list[str|pg.FP]:
         return [
             'integer', 'string', 'float', 'boolean', 'container', 'misc', 'index', 'element', 'placeholder'
         ]
 
-    def generate(self: Self) -> str:
+    def generate(self) -> str:
         type_ = self.type if self.type != 'any' else super().generate()
         name = R.choose_from(self.type_to_names[type_])
 

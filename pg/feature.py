@@ -1,19 +1,18 @@
-from typing import Self
 
 class Feature():
 
-    def __init__(self: Self, name: str) -> None:
+    def __init__(self, name: str) -> None:
         self._name = name
         self._value = False
         self._disabled = False
 
-    def value(self: Self, value: bool=None) -> bool:
+    def value(self, value: bool=None) -> bool:
         if value is not None:
             self._value = value
         return self._value
     
-    def disable(self: Self, disable: bool) -> None:
+    def disable(self, disable: bool) -> None:
         self._disabled = disable
     
-    def is_disabled(self: Self) -> bool:
+    def is_disabled(self) -> bool:
         return self._disabled

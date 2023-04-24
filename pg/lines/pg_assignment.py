@@ -1,10 +1,9 @@
 
-from typing import Self
 import pg
 
 class Assignment(pg.Mixin_Generatable, pg.Mixin_Renderable):
 
-    def get_patterns(self: Self) -> list[str|pg.FP]:
+    def get_patterns(self) -> list[str|pg.FP]:
         return [
             # TODO variables should be matched with expressions of matching type
             pg.FP(pg.FN(pg.Variable), '=', pg.FN(pg.Expression), weight=10),

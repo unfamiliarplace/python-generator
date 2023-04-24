@@ -1,10 +1,9 @@
-from typing import Self
 import pg
 
 
 class Control(pg.Mixin_Generatable, pg.Mixin_Renderable):
 
-    def get_patterns(self: Self) -> list[str|pg.FP]:
+    def get_patterns(self) -> list[str|pg.FP]:
         return [
         # TODO for i in range(int)
         # TODO for i in range(len(container))

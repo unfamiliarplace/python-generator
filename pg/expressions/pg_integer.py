@@ -1,15 +1,14 @@
 from js_random import JS_Random as R
-from typing import Self
 import pg
 
 
 class Integer(pg.Mixin_Generatable, pg.Mixin_Renderable):
 
-    def __init__(self: Self, lower: int=-50, upper: int=100) -> None:
+    def __init__(self, lower: int=-50, upper: int=100) -> None:
         self.lower = lower
         self.upper = upper
 
-    def get_patterns(self: Self) -> list[str|pg.FP]:
+    def get_patterns(self) -> list[str|pg.FP]:
         return [
             pg.FP(pg.FN(Integer_Literal, self.lower, self.upper), weight=4),
             pg.FP(pg.FN(Integer_Operation, self.lower, self.upper), weight=1),
@@ -20,11 +19,11 @@ class Integer(pg.Mixin_Generatable, pg.Mixin_Renderable):
 
 class Integer_Operation(pg.Mixin_Generatable, pg.Mixin_Renderable_Operation):
 
-    def __init__(self: Self, lower: int=-50, upper: int=100) -> None:
+    def __init__(self, lower: int=-50, upper: int=100) -> None:
         self.lower = lower
         self.upper = upper
 
-    def get_patterns(self: Self) -> list[str|pg.FP]:
+    def get_patterns(self) -> list[str|pg.FP]:
         return [
             pg.FP(pg.FN(Integer, self.lower, self.upper), '+', pg.FN(Integer, self.lower, self.upper), weight=3),
             pg.FP(pg.FN(Integer, self.lower, self.upper), '-', pg.FN(Integer, self.lower, self.upper), weight=3),
@@ -35,9 +34,9 @@ class Integer_Operation(pg.Mixin_Generatable, pg.Mixin_Renderable_Operation):
 
 class Integer_Literal(pg.Mixin_Generatable, pg.Mixin_Renderable):
 
-    def __init__(self: Self, lower: int=-50, upper: int=100) -> None:
+    def __init__(self, lower: int=-50, upper: int=100) -> None:
         self.lower = lower
         self.upper = upper
 
-    def generate(self: Self) -> int:
+    def generate(self) -> int:
         return R.number_between(self.lower, self.upper, False)

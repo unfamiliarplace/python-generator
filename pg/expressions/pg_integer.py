@@ -2,7 +2,6 @@ from js_random import JS_Random as R
 from typing import Self
 import pg
 
-
 class Integer(pg.Mixin_Generatable, pg.Mixin_Renderable):
 
     def __init__(self: Self, lower: int=-50, upper: int=100) -> None:

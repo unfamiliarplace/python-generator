@@ -1,8 +1,9 @@
 
+from enum import Enum
 from typing import Self
 import pg
 
-class Requirement_Mode():
+class Requirement_Mode(Enum):
     NONE = 0
     ANY = 1
     ALL = 2
@@ -17,7 +18,7 @@ class Formula_Requirement():
         RM.ALL: pg.PythonGenerator().all,
     }
 
-    def __init__(self: Self, *reqs: str, req_mode: int=RM.ALL) -> None:
+    def __init__(self: Self, *reqs: str, req_mode: RM=RM.ALL) -> None:
 
         # TODO in order for this to work we need to access the instantiated PG not the static class
 

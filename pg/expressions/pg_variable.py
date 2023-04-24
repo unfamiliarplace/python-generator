@@ -2,7 +2,6 @@ from typing import Self
 from js_random import JS_Random as R
 import pg
 
-
 class Variable(pg.Mixin_Generatable, pg.Mixin_Renderable):
 
     patterns = [

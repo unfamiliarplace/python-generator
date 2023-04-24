@@ -2,6 +2,7 @@ from typing import Self
 import pg
 
 class None_Node(pg.Mixin_Generatable, pg.Mixin_Renderable):
+    
     def get_patterns(self: Self) -> list[str|pg.FP]:
         return [
             pg.FP('None', weight=3),

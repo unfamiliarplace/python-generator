@@ -1,8 +1,9 @@
+from enum import Enum
 from typing import Self
 import pg
 
 # Return types
-class Return_Type():
+class Return_Type(Enum):
     ANY = 0
     NONE = 1
     BOOL = 2
@@ -15,7 +16,7 @@ RT = Return_Type
 
 class Function_Call(pg.Mixin_Generatable, pg.Mixin_Renderable):
     
-    def __init__(self: Self, return_type: int=RT.ANY, args: list[str]=[], kwargs: dict[str, str]={}) -> None:
+    def __init__(self: Self, return_type: RT=RT.ANY, args: list[str]=[], kwargs: dict[str, str]={}) -> None:
         super().__init__()
         self.return_type = return_type
         self.args = args

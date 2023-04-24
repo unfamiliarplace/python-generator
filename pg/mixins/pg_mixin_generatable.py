@@ -1,6 +1,5 @@
 from typing import Self
 import pg
-
 from js_random import JS_Random as R
 
 class Mixin_Generatable():

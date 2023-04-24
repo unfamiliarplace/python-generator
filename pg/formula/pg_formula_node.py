@@ -1,5 +1,4 @@
 import pg
-
 from typing import Self
 
 class Formula_Node():

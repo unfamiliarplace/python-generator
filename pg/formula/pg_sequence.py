@@ -1,7 +1,6 @@
 from typing import Self
 import pg
 
-
 class Sequence(pg.Mixin_Renderable):
 
     def __init__(self: Self, *components: object) -> None:

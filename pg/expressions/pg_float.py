@@ -2,7 +2,6 @@ from js_random import JS_Random as R
 from typing import Self
 import pg
 
-
 class Float(pg.Mixin_Generatable, pg.Mixin_Renderable):
     def get_patterns(self: Self) -> list[str|pg.FP]:
         return [

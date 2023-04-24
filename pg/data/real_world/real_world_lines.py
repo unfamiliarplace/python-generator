@@ -147,14 +147,14 @@ def format_ts(ms: int) -> str:
 def format_sub(start, end, sub) -> str:
     \"\"\"Return a formatted subtitle.\"\"\"
 
-    sub = sub.replace('<br />', '\n')
+    sub = sub.replace('<br />', '\\]n')
     if sub.startswith("'") and sub.endswith("'"):
         sub = f'<i>{sub[1:-1]}</i>'
 
     start = format_ts(parse_ts(start))
     end = format_ts(parse_ts(end))
 
-    return f'{start} --> {end}\n{sub}'
+    return f'{start} --> {end}\\n{sub}'
 
 # WORKING WITH LINES
 
@@ -169,7 +169,7 @@ def convert_lines(lines: list) -> iter:
     for line in lines:
         conv = convert_line(line)
         if conv:
-            yield f'{i}\n{conv}'
+            yield f'{i}\\n{conv}'
             i += 1
 
 # RUNNING
@@ -201,10 +201,10 @@ def run() -> None:
 
     with open(fname, 'r') as f, open(fname_fix, 'w') as f_fix:
         lines = convert_lines(f.readlines())
-        f_fix.write('\n\n'.join(lines))
+        f_fix.write('\\n\\n'.join(lines))
 
     # Report 
-    input('Saved to {}\nPress Enter to quit.'.format(fname_fix))
+    input('Saved to {}\\nPress Enter to quit.'.format(fname_fix))
 
 
 # PROGRAM
@@ -467,14 +467,14 @@ with open('cmudict.txt', 'r') as f:
 
 # save all
 with open('cmudict_no.txt', 'w') as f:
-    f.write('# no words\n')
+    f.write('# no words\\n')
     for length in sorted(no_words.keys()):
         for word in sorted(no_words[length]):
-            f.write(word + '\n')
-    f.write('\n# yes words\n')
+            f.write(word + '\\n')
+    f.write('\\n# yes words\\n')
     for length in sorted(yes_words.keys()):
         for word in sorted(yes_words[length]):
-            f.write(word + '\n')
+            f.write(word + '\\n')
 
 for i in range(1, 101):
     th = bool(i % 3)
@@ -489,14 +489,14 @@ import os
 for item in list(os.walk('.'))[0][2]:
     if item.endswith('flac'):
         with open(f'{item}.txt', 'w') as f:
-            f.write('\n')
+            f.write('\\n')
 
 import os
 
 for item in list(os.walk('.'))[0][2]:
     if item.endswith('flac'):
         with open(f'{item}.txt', 'w') as f:
-            f.write('\n')
+            f.write('\\n')
 
 import os
 import sys
@@ -619,7 +619,7 @@ while a == 0:
         
 input()
 import os, time
-os.chdir('C:\')
+os.chdir('C:\\')
 
 ROWS = 15000
 VARS = 34
@@ -634,7 +634,7 @@ for i in range(ROWS):
     row = ''
     for v in range(VARS):
         row += f'{v};'
-    f.write(row + '\n')
+    f.write(row + '\\n')
 
 f.close()
 
@@ -648,13 +648,13 @@ for line in f.readlines():
     rows = [''] * MULT
     
     for item in line.split(';'):
-        if item != '\n':
+        if item != '\\n':
             div = int(item) / MULT
             for i in range(MULT):
                 rows[i] += f'{div};'
 
     for row in rows:
-        f2.write(row + '\n')
+        f2.write(row + '\\n')
 
 f.close()
 f2.close()
@@ -1186,7 +1186,7 @@ def run():
         print('Winner: {}'.format(winner))
         print('Your wins: {}'.format(wins))
 
-        go = input('\nEnter to play again, Q to quit: ').strip().upper()
+        go = input('\\nEnter to play again, Q to quit: ').strip().upper()
 
 if __name__ == '__main__':
     run()

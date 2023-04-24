@@ -21,7 +21,7 @@ COMMENT_TEXT = """
 # p = 'some e1.some e2.((believe e1 john e2) and (walk e2 mary))'
 # Groups of length five patterns and length three roots
 # Return the new classifier.
-# print '\t|'+self._rhs(prod),
+# print '\\t|'+self._rhs(prod),
 # The grammar has changed; try parsing it. If it doesn't
 # Use an agenda-based algorithm.
 # from a string to an integer
@@ -210,7 +210,7 @@ COMMENT_TEXT = """
 # for (k,v) in self._bestp.items(): print(k,v)
 # With worder_len < 2, choose(worder_len, 2) will be 0.
 # that production's treelet could be attached to either the text
-# | / \ | | | |
+# | / \\ | | | |
 # if the Capitalisation is requested,
 # when scoring hypotheses
 # the number of 'VC' occurrences in Porter's reduced form in the
@@ -252,7 +252,7 @@ COMMENT_TEXT = """
 # keep _extension internally as a set
 # test corpus to look more like the training corpus.
 # Separator = str(''.join(perluniprops.chars('Separator')))
-# i.e. \p{Z}
+# i.e. \\p{Z}
 # Natural Language Toolkit: Decision Tree Classifiers
 # '.' prevents permutation
 # Use resolution
@@ -275,7 +275,7 @@ COMMENT_TEXT = """
 # faster than Model 2
 # Production List
 # If variable is bound
-# ShowText(None, 'title', ((('this is text'*150)+'\n')*5))
+# ShowText(None, 'title', ((('this is text'*150)+'\\n')*5))
 # If there is no argument for the function, use class' own rule tuple.
 # Need to +1 in range to include the end-point.
 # children = dg.nodes[node_index]['deps']
@@ -433,7 +433,7 @@ COMMENT_TEXT = """
 # Update the cells.
 # class InsideOutsideParser(BottomUpProbabilisticChartParser):
 # 2) use tautologies
-# the *i*\ th element of featuresets.
+# the *i*\\ th element of featuresets.
 # **attribs)
 # Decision tree:
 # The set of (fname, fval) pairs used by this classifier.
@@ -630,7 +630,7 @@ COMMENT_TEXT = """
 # STEP 0
 # Ask the user which demo they want to use.
 # No. of ngrams in translation that matches the reference.
-# X Y\X =>(<) Y
+# X Y\\X =>(<) Y
 # JRip, KStar, LBR, LeastMedSq, LinearRegression, LMT, Logistic,
 # responses are matched top to bottom, so non-specific matches occur later
 # ToDo: Update with https://en.wikipedia.org/wiki/List_of_emoticons ?
@@ -754,7 +754,7 @@ COMMENT_TEXT = """
 # Add extra space to make things easier
 #creating some features
 # Remove the child from our child list.
-# This is the \p{Open_Punctuation} from Perl's perluniprops
+# This is the \\p{Open_Punctuation} from Perl's perluniprops
 # combine the tree to reflect the reduction
 # Update lines to subtrees.
 # Same words with stems from a stemming algorithm
@@ -1033,7 +1033,7 @@ COMMENT_TEXT = """
 # STEP 4: Removal of final vowel
 # Backward crossed composition
 # A semi-hack to have elegant looking code below. As a result,
-# Note: In the original perl implementation, \p{Z} and \p{Zl} were used to
+# Note: In the original perl implementation, \\p{Z} and \\p{Zl} were used to
 # Earlier in step2b we had the rules:
 # if ( e aligned with f)
 # Methods
@@ -1081,7 +1081,7 @@ COMMENT_TEXT = """
 # graph.
 # Parented trees
 # Natural Language Toolkit: Recursive Descent Parser Application
-# This is the \p{Close_Punctuation} from Perl's perluniprops
+# This is the \\p{Close_Punctuation} from Perl's perluniprops
 # while self.token(0) != ']':
 # also fall between [0,1].
 # If it's a nonterminal, then set up new bindings, so we
@@ -1313,7 +1313,7 @@ COMMENT_TEXT = """
 # Initialize fonts.
 # Info(w_1 ... w_n) = log_2 [ (# of occurrences of w_1 ... w_n-1) / (# of occurrences of w_1 ... w_n) ]
 # Remember what production we're hovering over.
-# self._textwidget.insert('end', '\n')
+# self._textwidget.insert('end', '\\n')
 # Stepping Chart Parser
 # Check against all tokens
 # This is a maltparser quirk, it needs to be run
@@ -1521,7 +1521,7 @@ COMMENT_TEXT = """
 # Find the case-normalized type of the token. If it's
 # Handle the second operand
 # Natural Language Toolkit: Senna Interface
-# conll_format += '\t%d\t%s\t%s\t%s\t%s\t%s\t%d\t%s\t%s\t%s\n' % (i+1, tokens[i], tokens[i], 'null', 'null', 'null', parse._arcs[i] + 1, 'null', '-', '-')
+# conll_format += '\\t%d\\t%s\\t%s\\t%s\\t%s\\t%s\\t%d\\t%s\\t%s\\t%s\\n' % (i+1, tokens[i], tokens[i], 'null', 'null', 'null', parse._arcs[i] + 1, 'null', '-', '-')
 # After parsing, the parent of the immediate children
 # Clicking on a new edge selects it.
 # and breaks array and string indices. Make sure they never get chosen
@@ -1622,7 +1622,7 @@ COMMENT_TEXT = """
 # This probably belongs in a more general-purpose location (as does
 # If a grammar was given, then display it.
 # - exp_nf_delta[x][y] = exp(nf[x] * delta[y])
-# in perl: m{://} or m{\S+\.\S+/\S+} or s{/}{ / }g;
+# in perl: m{://} or m{\\S+\\.\\S+/\\S+} or s{/}{ / }g;
 # Determine the most relevant features, and display them.
 # colditzjb commented on 9 Dec 2014
 # Maybe show the details of the semantic representation.
@@ -1631,9 +1631,9 @@ COMMENT_TEXT = """
 # calculate the number of ngram matches
 # initialize the stack.
 # Get the leaves and initial categories
-# *i*\ th element of this list is the most appropriate label for
+# *i*\\ th element of this list is the most appropriate label for
 # nfarray performs the reverse operation. nfident is
-# s = re.sub(r'^#[^\s]*\s', '', s)
+# s = re.sub(r'^#[^\\s]*\\s', '', s)
 # remove leading identifier
 # iterate through the text, pushing the token onto
 # a function rather than just False.
@@ -1679,7 +1679,7 @@ COMMENT_TEXT = """
 # Copyright (C) 2001-2013 NLTK Project
 # { Word tokenization
 # Misc
-# - clitics covered (?!re|ve|ll|m|t|s|d)(\w)\b
+# - clitics covered (?!re|ve|ll|m|t|s|d)(\\w)\\b
 # Numeric character references in the 80-9F range are typically
 # Update the matrix view
 # print the assumptions
@@ -1799,7 +1799,7 @@ COMMENT_TEXT = """
 # functionality for limiting the number of Tweets retrieved
 # Range U+FF65–FFDC encodes halfwidth forms, of Katakana and Hangul characters
 # to move its children to its parent
-# s += ' size="5,5";\n'
+# s += ' size="5,5";\\n'
 # It's probably a tuple containing a Synset and a list of
 # if we are filtering or showing thread readings, show threads
 # Add a display showing the error token itsels:
@@ -1855,16 +1855,16 @@ COMMENT_TEXT = """
 # triangle.
 # Add v_n+1 to list of unvisited vertices
 # _extension += element + ', '
-# |[NP -> Det N ]| / \ |
+# |[NP -> Det N ]| / \\ |
 # leaf, it must match with the input.
 # Scan through the corpus, initializing the tag_positions
 # Don't allow resolution to itself or other types
-# UserIDs corresponding to\
+# UserIDs corresponding to\\
 # The argument must be a function.
 # Any production whose RHS is an extension of another production's RHS
 # STEP 6: Remove owned
-# if token[0] in "'\"": rhs.append(token[1:-1])
-# ie, (N\N)/(S/NP) => N\N
+# if token[0] in "'\\"": rhs.append(token[1:-1])
+# ie, (N\\N)/(S/NP) => N\\N
 # this sentence is known to fail under the WSJ parsing model
 # Size of chart levels
 # does a last ditch whitespace-based tokenization of whatever is left.
@@ -1919,7 +1919,7 @@ COMMENT_TEXT = """
 # so g[u/var] is a satisfying assignment
 # Common sets of combinators used for English derivations.
 # try to place each word
-# text = regexp.sub(r' \1 \2 \3 ', text)
+# text = regexp.sub(r' \\1 \\2 \\3 ', text)
 # uncurry the arguments and find the base function
 # Move our position pointer to the end of the token.
 # i.e. 'you' is not really a thing that can be mapped this way, so this
@@ -2013,7 +2013,7 @@ COMMENT_TEXT = """
 # STEP 4: Residual suffixes
 # Truncation line goes through origo, so ERRT cannot be counted
 # print(i+1, (tacc / tp_kn), i+1, (sacc / tp_kn), i+1, tacc, i+1, sacc)
-# malt_format += '%s\t%s\t%d\t%s\n' % (tokens[i], 'null', parse._arcs[i] + 1, 'null')
+# malt_format += '%s\\t%s\\t%d\\t%s\\n' % (tokens[i], 'null', parse._arcs[i] + 1, 'null')
 # Doctest for patching issue
 # 1926
 # These are used to keep track of the set of tree tokens
@@ -2070,7 +2070,7 @@ COMMENT_TEXT = """
 # The most recent operation
 # node x's. Otherwise, make room for ourselves.
 # Chart comparer:
-# - chervon quotes u'\xab' and u'\xbb' .
+# - chervon quotes u'\\xab' and u'\\xbb' .
 # Template(Feature1(args), Feature2(args), ...)
 # https://sf.net/forum/forum.php?thread_id=1675097&forum_id=473054
 # Natural Language Toolkit: Recursive Descent Parser
@@ -2159,7 +2159,7 @@ COMMENT_TEXT = """
 # Recursively try to fill in the rest of the holes in the
 # We build up text one word at a time using the preceding context.
 # STEP 3: Derivational suffixes
-# Note: [A-Za-z] is approximated by [^\W\d] in the general case.
+# Note: [A-Za-z] is approximated by [^\\W\\d] in the general case.
 # every iteration, in cases requiring efficiency, the number of tokens
 # Apply keyword parameters
 #Template(Word([0,1]), Word([1]), will not appear in the output.
@@ -2256,7 +2256,7 @@ COMMENT_TEXT = """
 # U+1F3F4 🏴 followed by emoji tag sequences:
 # Count OT (length of the line from origo to truncation line that goes through (ui, oi))
 # will also be > available_end, since the
-# Split off the comment (but don't split on '\#')
+# Split off the comment (but don't split on '\\#')
 # c_graph = Union(c_graph, v_n+1)
 # Update _rules_by_position
 # We could do parent.manage() here instead, if we wanted.
@@ -2306,7 +2306,7 @@ COMMENT_TEXT = """
 # Ensures the left functor takes an argument on the right
 # be the period. Find a log likelihood ratio that
 # Sort votes according to the values
-# (re.compile(r"\s([:,])\s$"), r"\1"),
+# (re.compile(r"\\s([:,])\\s$"), r"\\1"),
 # .strip() takes care of it.
 # Update the classifier weights
 # Return it
@@ -2316,7 +2316,7 @@ COMMENT_TEXT = """
 # If any ancestor is draggable, set up a motion callback.
 # parse, do nothing. (flag error location?)
 # boundaries are at the same location, no transformation required
-# self._textwidget.insert('end', '\t|'+self._rhs(prod))
+# self._textwidget.insert('end', '\\t|'+self._rhs(prod))
 # not the ISO subset of two-letter regional indicator symbols.
 # before any chart is loaded).
 # ------------
@@ -2414,7 +2414,7 @@ COMMENT_TEXT = """
 # Natural Language Toolkit: Confusion Matrices
 # writing error analysis to file
 # Line_Separator = str(''.join(perluniprops.chars('Line_Separator')))
-# i.e. \p{Zl}
+# i.e. \\p{Zl}
 # Traverse the tree depth-first keeping a list of ancestor nodes to the root.
 # regular expression, and a list of possible responses,
 # add extra space to make things easier
@@ -2427,7 +2427,7 @@ COMMENT_TEXT = """
 # Evaluation
 # Check leaves below us.
 # print(len(s))
-# (re.compile(r"\s([&*])\s"), r" \g<1> "),
+# (re.compile(r"\\s([&*])\\s"), r" \\g<1> "),
 # Unknown pad.
 # cover the span.
 # above us, draw a vertical branch in that column.
@@ -2490,7 +2490,7 @@ COMMENT_TEXT = """
 # Write a key
 # Rule-based Non-Projective Parser
 # Our queue
-# Support expressions like: \x y.M = \x.\y.M
+# Support expressions like: \\x y.M = \\x.\\y.M
 # assert m = () or matrix[rowidx][i] in (None, corner), (
 # Natural Language Toolkit: First-order Resolution-based Theorem Prover
 # Write the training data file.
@@ -2536,7 +2536,7 @@ COMMENT_TEXT = """
 # | N -> 'cat' | |
 # tableau_test('some x.all y.sees(x,y)')
 # Iterate over unvisited vertices
-# this list is the most appropriate label for the *i*\ th element
+# this list is the most appropriate label for the *i*\\ th element
 # right-justified, when possible); and move the remaining text
 # Prints the sequence of derivation steps.
 # Return the final chart.
@@ -2593,7 +2593,7 @@ COMMENT_TEXT = """
 # Define two demos. Each demo has a sentence and a grammar.
 # self.next()
 # Start stemming
-# s = re.sub(r'\w+:', '', s)
+# s = re.sub(r'\\w+:', '', s)
 # remove role tags
 # Internal Methods
 # Move the widget out of the way, for now.
@@ -3005,11 +3005,11 @@ COMMENT_TEXT = """
 # Extract gold & test chunks
 # Keep a list of all feature names.
 # TweetTokenizer.WORD_RE and TweetTokenizer.PHONE_WORD_RE represent
-# (re.compile(r'\s([?!])\s'), r'\g<1>'),
+# (re.compile(r'\\s([?!])\\s'), r'\\g<1>'),
 # from the previous token.
 # line segment when counting the intersection point
 # find closest paragraph break
-# "Regular Expression Syntax Summary:\n\n"
+# "Regular Expression Syntax Summary:\\n\\n"
 # If they select a example, apply it.
 # python versions
 # convert tree back to bracketed text
@@ -3078,7 +3078,7 @@ COMMENT_TEXT = """
 # Build the senna command to run the tagger
 # skip this possible 'self' atom
 # Construct the lexicon
-# X Y\X =>(<T) Y/(Y\X) Y\X =>(>) Y
+# X Y\\X =>(<T) Y/(Y\\X) Y\\X =>(>) Y
 # List of contractions adapted from Robert MacIntyre's tokenizer.
 # Decide whether the next word is at a sentence boundary.
 # Percentage of text left of the scrollbar position
@@ -3158,7 +3158,7 @@ COMMENT_TEXT = """
 # add other nodes centered on their children,
 # if the current example is not the first example
 # if c2: c2.itemconfig(t2, width=2, fill='gray60')
-# NOTE: a simple but ugly hack to make this parser happy with double '\t's
+# NOTE: a simple but ugly hack to make this parser happy with double '\\t's
 # Ensures that denominator is minimum 1 to avoid ZeroDivisionError.
 # Finally, strips heading and trailing spaces
 # inverse variance, so the parameter conversion is 1.0/sigma**2.
@@ -3200,7 +3200,7 @@ COMMENT_TEXT = """
 # Most of the work here is making sure that we put the right
 # Connect the source words
 # inductively calculate remaining backward values
-# ie, which => (N\N)/(S/NP)
+# ie, which => (N\\N)/(S/NP)
 # length three suffixes
 # This particular element is used in a couple ways, so we define it
 # see: https://en.wikipedia.org/wiki/ISO/IEC_8859-1#Similar_character_sets
@@ -3247,7 +3247,7 @@ COMMENT_TEXT = """
 # sanity check
 # Natural Language Toolkit: Classifier Utility Functions
 # Participle of verb - not supported by corpus
-# (\x.\y.sees(x,y)(john))(mary)
+# (\\x.\\y.sees(x,y)(john))(mary)
 # Highlight the productions that can be reduced.
 # tokenize the sentence
 #For instance, importing a concrete subclass (Feature is abstract)
@@ -3404,7 +3404,7 @@ COMMENT_TEXT = """
 # UI is 0, define SW as infinity
 # If parsed is a propositional letter 'p', 'q', etc, it could be in valuation.symbols
 # e.g. "is it possible?", "is this true?"
-# Unicode codepoint properties with the \p{} syntax.
+# Unicode codepoint properties with the \\p{} syntax.
 # remove unused columns, right to left
 # it gets the implicit value 'None'.
 # the new button press.
@@ -3445,7 +3445,7 @@ COMMENT_TEXT = """
 # flags
 # take the longest common subsequence.
 # first in x; to avoid StopIteration problems due to assuming an order
-# Only splits on '\n', never inside the sentence.
+# Only splits on '\\n', never inside the sentence.
 # It must be a lambda expression, so use curried form
 # The decorator has its own versions of 'result' and 'proof'
 # STEP 3: Cases
@@ -3566,7 +3566,7 @@ COMMENT_TEXT = """
 # But hopefully we have observations!
 # If requested, strip off blank lines.
 # e.g. "you stink!"
-# each of the given featuresets, where the *i*\ th element of
+# each of the given featuresets, where the *i*\\ th element of
 # Output the resulting parses
 # Check all the leaves
 # var isn't free in parsed
@@ -3766,7 +3766,7 @@ COMMENT_TEXT = """
 # Unexpected HTML
 # Calculate the deltas for this iteration, using Newton's method.
 # Every word is put into lower case for normalization.
-# r'\U0001F3F4[\U000E0000-\U000E007E]{5}\U000E007F'
+# r'\\U0001F3F4[\\U000E0000-\\U000E007E]{5}\\U000E007F'
 # no match, so backtrack
 # extractor and doesn't accept or return an index.
 # Check if we're done
@@ -3809,7 +3809,7 @@ COMMENT_TEXT = """
 # with group-macros labelled as %1, %2.
 # When the chart is incremental, we only have to look for
 # Add always-on features:
-# - unicode quotes u'\u2018', u'\u2019', u'\u201c' and u'\u201d'
+# - unicode quotes u'\\u2018', u'\\u2019', u'\\u201c' and u'\\u201d'
 # Note that (self.ui, self.oi) cannot be (0.0, 0.0) and self.coords has different coordinates
 # the pattern backwards (with lookahead assertions). This can be
 # Before proceeding to compute NIST, perform sanity checks.
@@ -4071,7 +4071,7 @@ COMMENT_TEXT = """
 # Apply each rule to the entire corpus, in order
 # XXX: it is stated in module docs that there is no function versions
 # Note: CONTRACTIONS4 are not used in tokenization.
-# Comparing \x.M and \y.N. Relabel y in N with x and continue.
+# Comparing \\x.M and \\y.N. Relabel y in N with x and continue.
 # prod_by_lhs = {}
 # Standard parser methods
 # Twitter username:
@@ -4097,7 +4097,7 @@ COMMENT_TEXT = """
 # The user can cancel training manually:
 # If it's a non-matching terminal, fail.
 # incvnt = i + 1 * self.k / math.log(
-# p_n[i] = incvnt / p_i.denominator\
+# p_n[i] = incvnt / p_i.denominator\\
 # setting negative probabilities to zero and normalizing.
 # Create the index.
 # raise KeyError, "There is no GlueDict entry for sem type '%s' (for '%s')" % (sem, word)

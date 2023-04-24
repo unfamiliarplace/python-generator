@@ -1,3 +1,4 @@
+REAL_WORLD_TEXT = """
 import timeit
 import random
 from pandas import Series
@@ -103,7 +104,7 @@ TS          = r'<p begin="(.*?)" end="(.*?)" region="AmazonDefaultRegion" style=
 # WORKING WITH TIMESTAMPS
 
 def parse_ts(ts: str) -> int:
-    """Return the number of milliseconds in a given timestamp."""
+    \"\"\"Return the number of milliseconds in a given timestamp.\"\"\"
 
     # Get the separate parts
     hrs, mins, ms = ts.split(':')
@@ -118,7 +119,7 @@ def parse_ts(ts: str) -> int:
 
 
 def format_ts(ms: int) -> str:
-    """Format the given milliseconds as a timestamp."""
+    \"\"\"Format the given milliseconds as a timestamp.\"\"\"
 
     hrs = 0
     mins = 0
@@ -144,7 +145,7 @@ def format_ts(ms: int) -> str:
     return ts
 
 def format_sub(start, end, sub) -> str:
-    """Return a formatted subtitle."""
+    \"\"\"Return a formatted subtitle.\"\"\"
 
     sub = sub.replace('<br />', '\n')
     if sub.startswith("'") and sub.endswith("'"):
@@ -174,25 +175,25 @@ def convert_lines(lines: list) -> iter:
 # RUNNING
 
 def prompt_fname() -> str:
-    """Return a str (filename)."""
+    \"\"\"Return a str (filename).\"\"\"
 
     fname = input('Enter the name of a subtitle file: ').strip()
     return fname
 
 def prompt_offset() -> int:
-    """Return an int (milliseconds offset)."""
+    \"\"\"Return an int (milliseconds offset).\"\"\"
 
     offset = int(input('Enter an offset in milliseconds: ').strip())
     return offset
 
 def get_fix_fname(fname: str) -> str:
-    """Return the filename for the fixed version."""
+    \"\"\"Return the filename for the fixed version.\"\"\"
     
     return f'{fname[:fname.rfind(".")]}_fix.srt'
     
 
 def run() -> None:
-    """Open file, correct each line, save to new file."""
+    \"\"\"Open file, correct each line, save to new file.\"\"\"
 
     # Determine filenames and offset
     fname = prompt_fname()
@@ -529,7 +530,7 @@ for _, _, files in os.walk('.'):
 print(f'Listified {cwd}')
 input('Hit Enter to quit')
 def m_to_d_1(m: int) -> int:
-    """Hardcoding each relation"""
+    \"\"\"Hardcoding each relation\"\"\"
 
     if m == 1:
         return 31
@@ -558,12 +559,12 @@ def m_to_d_1(m: int) -> int:
 
 
 def m_to_d_2(m: int) -> int:
-    """Hardcoding each relation, but code golfed"""
+    \"\"\"Hardcoding each relation, but code golfed\"\"\"
     
     return int('312831303130313130313031'[(m - 1) * 2:][:2])
 
 def m_to_d_3(m: int) -> int:
-    """First attempt to find a pattern"""
+    \"\"\"First attempt to find a pattern\"\"\"
     
     if m == 2:
         return 28
@@ -573,7 +574,7 @@ def m_to_d_3(m: int) -> int:
         return 31 - m % 2
 
 def m_to_d_4(m: int) -> int:
-    """Same as 3 but as an expression instead of with control keywords"""
+    \"\"\"Same as 3 but as an expression instead of with control keywords\"\"\"
 
     return 28 + (2 * (m != 2)) + ((m < 8 and m % 2) or (m > 7 and not (m % 2)))
 
@@ -764,7 +765,7 @@ LETTERS = {
     '9': set('WXYZ'),
 }
 
-prompt = """Enter here:"""
+prompt = \"\"\"Enter here:\"\"\"
 
 no_words = set()
 
@@ -923,7 +924,7 @@ LETTERS = {
     '9': set('WXYZ'),
 }
 
-prompt = """Enter here: """
+prompt = \"\"\"Enter here: \"\"\"
 
 no_words = set()
 
@@ -1231,3 +1232,8 @@ def any_base_to_int(n: str, base: int) -> int:
 
 def vindicate_douglas_adams():
     assert 6 * 9 == any_base_to_int('42', 13)
+"""
+
+# Remove blank first and last used for formatting
+REAL_WORLD_LINES = REAL_WORLD_TEXT.split('\n')[1:-1]
+REAL_WORLD_LINES = list(filter(lambda L: bool(L.strip()), REAL_WORLD_LINES))

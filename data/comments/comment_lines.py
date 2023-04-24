@@ -1,8 +1,10 @@
+COMMENT_TEXT = """
 # Draw the tree in the treelet area.
-# Check The Training Function #
+# Check The Training Function
 # high
 # Parse the generated weight vector.
-#'--flat', 'false', # removed from boxer
+#'--flat', 'false',
+# removed from boxer
 # View Menu
 # we shouldn't trigger corpus loading again in this case.
 # holes of its own so at the end of the queue. Putting it on
@@ -249,7 +251,8 @@
 #: for a list of tags you can use for colorizing.
 # keep _extension internally as a set
 # test corpus to look more like the training corpus.
-# Separator = str(''.join(perluniprops.chars('Separator'))) # i.e. \p{Z}
+# Separator = str(''.join(perluniprops.chars('Separator')))
+# i.e. \p{Z}
 # Natural Language Toolkit: Decision Tree Classifiers
 # '.' prevents permutation
 # Use resolution
@@ -332,7 +335,6 @@
 # The next best alternative is to start the server, have it close when
 # print('p(s_%d = %s, s_%d = %s) =' % (t0, s0, t1, s1), p)
 # single-quotes (because '' might be transformed to  if it is
-# conll_format += '\t%d\t%s\t%s\t%s\t%s\t%s\t%d\t%s\t%s\t%s\n' % (i+1, tokens[i], tokens[i], parse._tags[i], parse._tags[i], 'null', parse._arcs[i] + 1, 'null', '-', '-')
 # Look up the set of labels.
 # Converts pharaoh text format into list of tuples.
 # recall, we can reduce the number of division operations by one by
@@ -341,7 +343,7 @@
 # Note that SHIFT is always a valid operation
 # The dev set
 # self._autostep_button['text'] = 'Autostep'
-# # Add the producitons to the text widget, and colorize them.
+# Add the producitons to the text widget, and colorize them.
 # Ha Miim Alif, Ha Noon Shadda
 # period, then label tok as an abbreviation and NOT
 # Ask the user which parser to test,
@@ -391,7 +393,8 @@
 # Clear all selected rows.
 # Demonstrate LaTeX output
 # Check if we just completed a parse.
-#ID | Score (train) | #Rules | Template
+# ID | Score (train) |
+# Rules | Template
 # Transforms
 # Support expressions like: some x y.M = some x.some y.M
 # [xx] should the check for (ii) be modified??
@@ -792,7 +795,8 @@
 # If it's a new edge, then get a new list of treetoks.
 # STEP 1: Remove instrumental case
 # Create a temporary input file
-# self.token() #swallow the ']'
+# self.token()
+#swallow the ']'
 # doesn't separate words from
 # Reset the height for the sentence window.
 # Draw lines to the children.
@@ -898,7 +902,7 @@
 # instead finding the maximum of the denominators for the precision
 # Edges
 # it receives SIGTERM (default), and run the browser as well. The user
-# Check The Parsing Function #
+# Check The Parsing Function
 # future work: consider other sentiment-laden idioms
 # Natural Language Toolkit: RSLP Stemmer
 # whether we should *also* classify it as a sentbreak.
@@ -1467,7 +1471,7 @@
 # yes or no - raise an issue of certainty/correctness
 # close the concept's extension according to the properties in closures
 # this deals with empty nodes (frontier non-terminals)
-# # Inherit docs.
+# Inherit docs.
 # Display the scores.
 # strip common prefixes of the nouns
 # It's valid; Use _TOKEN_RE to tokenize the production,
@@ -1491,7 +1495,7 @@
 # This method is 7x faster which helps when parsing 40,000 sentences.
 # If we encounter a paragraph break, then it's a good sign
 # can questions, e.g. "can I have some cake?", "can I know truth?"
-# # [XX] IN PROGRESS:
+# [XX] IN PROGRESS:
 # (This only happens if the position's tag hasn't changed.)
 # WordNet corpus is installed.
 # say goodbye with some extra Zen wisdom.
@@ -1629,7 +1633,8 @@
 # Get the leaves and initial categories
 # *i*\ th element of this list is the most appropriate label for
 # nfarray performs the reverse operation. nfident is
-# s = re.sub(r'^#[^\s]*\s', '', s) # remove leading identifier
+# s = re.sub(r'^#[^\s]*\s', '', s)
+# remove leading identifier
 # iterate through the text, pushing the token onto
 # a function rather than just False.
 # See https://github.com/nltk/nltk/issues/1995#issuecomment-376741608
@@ -2009,7 +2014,8 @@
 # Truncation line goes through origo, so ERRT cannot be counted
 # print(i+1, (tacc / tp_kn), i+1, (sacc / tp_kn), i+1, tacc, i+1, sacc)
 # malt_format += '%s\t%s\t%d\t%s\n' % (tokens[i], 'null', parse._arcs[i] + 1, 'null')
-# Doctest for patching issue #1926
+# Doctest for patching issue
+# 1926
 # These are used to keep track of the set of tree tokens
 # use the same string as a label
 # Agreement Coefficients
@@ -2300,7 +2306,8 @@
 # Ensures the left functor takes an argument on the right
 # be the period. Find a log likelihood ratio that
 # Sort votes according to the values
-# (re.compile(r"\s([:,])\s$"), r"\1"), # .strip() takes care of it.
+# (re.compile(r"\s([:,])\s$"), r"\1"),
+# .strip() takes care of it.
 # Update the classifier weights
 # Return it
 # Recover parse tree
@@ -2330,7 +2337,7 @@
 # Natural Language Toolkit: Tagset Mapping
 # Natural Language Toolkit: TnT Tagger
 # this would need to put requirements on what encoding is used. But
-# #if dec_func[k] > 0:
+# if dec_func[k] > 0:
 # Print out the formulas in a textual format.
 # All modifications to the class are performed by inheritance.
 # (max_v) - (1-max_v) + 1 = 2 * max_v.
@@ -2406,7 +2413,8 @@
 # It's best to use decision function as follow BUT it's not supported yet for sparse SVM
 # Natural Language Toolkit: Confusion Matrices
 # writing error analysis to file
-# Line_Separator = str(''.join(perluniprops.chars('Line_Separator'))) # i.e. \p{Zl}
+# Line_Separator = str(''.join(perluniprops.chars('Line_Separator')))
+# i.e. \p{Zl}
 # Traverse the tree depth-first keeping a list of ancestor nodes to the root.
 # regular expression, and a list of possible responses,
 # add extra space to make things easier
@@ -2419,7 +2427,8 @@
 # Evaluation
 # Check leaves below us.
 # print(len(s))
-# (re.compile(r"\s([&*])\s"), r" \g<1> "), # Unknown pad.
+# (re.compile(r"\s([&*])\s"), r" \g<1> "),
+# Unknown pad.
 # cover the span.
 # above us, draw a vertical branch in that column.
 # if there are accessible_vars on the path
@@ -2584,7 +2593,8 @@
 # Define two demos. Each demo has a sentence and a grammar.
 # self.next()
 # Start stemming
-# s = re.sub(r'\w+:', '', s) # remove role tags
+# s = re.sub(r'\w+:', '', s)
+# remove role tags
 # Internal Methods
 # Move the widget out of the way, for now.
 # However, in THIS case, we need to handle the consecutive rules
@@ -3057,7 +3067,7 @@
 # Copyright (C) 2005-2007 Oregon Graduate Institute
 # now check required dictionaries
 # Set up the main window.
-# # Delete the old widgets..
+# Delete the old widgets..
 # Instances of type-raising combinators
 # Basic idea: Keep track of the rules that apply at each position.
 # and get_rare_abbreviations.
@@ -3186,7 +3196,7 @@
 # Firing an event so that rendering of widgets happen in the mainloop thread
 # Initialize trg_word to align with the NULL token
 # word is in the first position.
-# ) # Note that this K is different from the K from NIST.
+# Note that this K is different from the K from NIST.
 # Most of the work here is making sure that we put the right
 # Connect the source words
 # inductively calculate remaining backward values
@@ -3303,7 +3313,7 @@
 # (excluding the ones that immediately preceed the item) based
 # Russian model for nltk.pos_tag() uses it.
 # repeat is True, thus close output file and
-# Initialize a valuation of non-logical constants."""
+# Initialize a valuation of non-logical constants.
 # any of the possible labels.
 # color='#000000', font=self._font)
 # _class_ to something new:
@@ -3570,7 +3580,6 @@
 # Use the classifier to pick a tag. If a cutoff probability
 # Every method that adds or removes a child must make
 # Based on the EdgeI class from NLTK.
-# """
 # Check if the change causes any rule at this position to
 # Map the different apostrophe characters to a single consistent one
 # sum matches and max-token-lengths over all sentences
@@ -3689,7 +3698,7 @@
 # inherit docs from BrillTemplateI
 # From the prediction match to the operation
 # just return (no new edges to add).
-# increment # of nodes counter
+# increment of nodes counter
 # two child subsequences
 # Decode the line.
 # Incremental CFG Chart Parsers
@@ -3743,7 +3752,7 @@
 # Properties
 # max_precision -= min_precision
 # Natural Language Toolkit: Interface to the Stanford Segmenter
-# # Make a new one.
+# Make a new one.
 # Natural Language Toolkit: Wordfreq Application
 # (right click?)
 # If conll_file is a ZipFilePathPointer,
@@ -3753,7 +3762,8 @@
 # Support expressions like: DRS([x y],C) = DRS([x, y],C)
 # dev set scrollbars
 # Much of the GUI code is imported from concordance.py; We intend to merge these tools together
-# raise ValueError # Unexpected HTML
+# raise ValueError
+# Unexpected HTML
 # Calculate the deltas for this iteration, using Newton's method.
 # Every word is put into lower case for normalization.
 # r'\U0001F3F4[\U000E0000-\U000E007E]{5}\U000E007F'
@@ -3810,7 +3820,7 @@
 # all the holes at level i of the formula tree are filled
 # It's not a predicate expression ("P(x,y)"), so leave arguments curried
 # Collects the various precision values for the different ngram orders.
-# Check the Initial Feature #
+# Check the Initial Feature
 # if a bound variable is the thing being replaced
 # All acute accents are replaced by grave accents.
 # put imports here to avoid circult dependencies
@@ -4000,7 +4010,7 @@
 # Natural Language Toolkit: GLEU Score
 # be reimplemented
 # but.. lines???
-# Check The Transition #
+# Check The Transition
 # Natural Language Toolkit: Tagger Interface
 # for prod in self._cfg.productions():
 # Parser modification
@@ -4008,7 +4018,7 @@
 # end nested functions
 # suggest using NLTK's mailing list for Portuguese for any discussion.
 # Construct an encoding from the training data.
-# # Find the best path from S to each nonterminal
+# Find the best path from S to each nonterminal
 # If vowels are spread across multiple levels, they should be
 #forms removed. Default for combinations is (1, len(L)).
 # or.. just have users use LazyMap directly?
@@ -4220,3 +4230,8 @@
 # 'architecture' becomes 'vcccvcvccvcv'
 # Update the grammar label
 # length from origo to truncation line is 0
+"""
+
+# Remove blank first and last used for formatting
+COMMENT_LINES = COMMENT_TEXT.split('\n')[1:-1]
+COMMENT_LINES = list(filter(lambda L: bool(L.strip()), COMMENT_LINES))

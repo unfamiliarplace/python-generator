@@ -10,6 +10,40 @@ from formula.pg_formula_pattern import FP
 from formula.pg_formula_node import FN
 from formula.pg_formula_requirement import FR
 
+def brackets_are_good(s: str) -> bool:
+    depth_b = 0
+    depth_s = 0
+    depth_c = 0
+
+    for c in s:
+        depth_b += (c == '(')
+        depth_s += (c == '[')
+        depth_c += (c == '{')
+
+        if c == ')':
+            if depth_b < 1:
+                return False
+            depth_b -= 1
+
+        if c == ']':
+            if depth_s < 1:
+                return False
+            depth_s -= 1
+
+        if c == '}':
+            if depth_c < 1:
+                return False
+            depth_c -= 1
+    
+    return (depth_b + depth_s + depth_c) == 0
+
+def strip_unnecessary_brackets(s: str) -> str:
+    if (s[0] + s[-1]) == '()':
+        inner = s[1:-1]
+        if brackets_are_good(inner):
+            return inner
+    return s
+
 class Line(Mixin_Generatable, Mixin_Renderable):
 
     def get_patterns(self) -> list[str|FP]:
@@ -21,3 +55,6 @@ class Line(Mixin_Generatable, Mixin_Renderable):
             FP(FN(Decorator), reqs=FR('decorators'), weight=1),
             FP(FN(Comment), reqs=FR('comments'), weight=3)
         ]
+
+    def str(self) -> str:
+        return strip_unnecessary_brackets(str(self.generate()))

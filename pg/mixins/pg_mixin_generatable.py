@@ -1,6 +1,5 @@
 
 from util.js_random import JS_Random as R
-import features
 from formula.pg_formula_pattern import FP
 
 class Mixin_Generatable():

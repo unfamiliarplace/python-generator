@@ -1,6 +1,6 @@
-from typing import Self
-import pg
+from mixins.pg_mixin_generatable import Mixin_Generatable
+from mixins.pg_mixin_renderable import Mixin_Renderable
 
-class Function_Lambda(pg.Mixin_Generatable, pg.Mixin_Renderable):
+class Function_Lambda(Mixin_Generatable, Mixin_Renderable):
     # TODO
     pass

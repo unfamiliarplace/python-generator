@@ -1,9 +1,11 @@
-from typing import Self
-import pg
 
-class Exception(pg.Mixin_Generatable, pg.Mixin_Renderable):
+from formula.pg_formula_pattern import FP
+from mixins.pg_mixin_generatable import Mixin_Generatable
+from mixins.pg_mixin_renderable import Mixin_Renderable
 
-    def get_patterns(self: Self) -> list[str|pg.FP]:
+class Exception(Mixin_Generatable, Mixin_Renderable):
+
+    def get_patterns(self) -> list[str|FP]:
         return [
             'ValueError',
             'TypeError',

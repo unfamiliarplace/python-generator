@@ -1,18 +1,24 @@
-from typing import Self
-import pg
 
+from expressions.pg_boolean import Boolean
+from expressions.pg_expression import Expression
+from formula.pg_formula_node import FN
+from formula.pg_formula_pattern import FP
+from formula.pg_formula_requirement import FR
+from lines.pg_assignment import Assignment
+from mixins.pg_mixin_generatable import Mixin_Generatable
+from mixins.pg_mixin_renderable import Mixin_Renderable
 from statements.pg_control import Control
 from statements.pg_import import Import
 
-class Statement(pg.Mixin_Generatable, pg.Mixin_Renderable):
+class Statement(Mixin_Generatable, Mixin_Renderable):
 
-    def get_patterns(self: Self) -> list[str|pg.FP]:
+    def get_patterns(self) -> list[str|FP]:
         return [
-            pg.FP('pass', weight=1),
-            pg.FP('return', pg.FN(pg.Expression), reqs=pg.FR('functions'), weight=1),        
-            pg.FP('assert', pg.FN(pg.Boolean), reqs=pg.FR('booleans'), weight=1),
+            FP('pass', weight=1),
+            FP('return', FN(Expression), reqs=FR('functions'), weight=1),        
+            FP('assert', FN(Boolean), reqs=FR('booleans'), weight=1),
 
-            pg.FP(pg.FN(Control), reqs=pg.FR('control'), weight=4),
-            pg.FP(pg.FN(pg.Assignment), reqs=pg.FR('variables'), weight=3),
-            pg.FP(pg.FN(Import), reqs=pg.FR('imports'), weight=2),
+            FP(FN(Control), reqs=FR('control'), weight=4),
+            FP(FN(Assignment), reqs=FR('variables'), weight=3),
+            FP(FN(Import), reqs=FR('imports'), weight=2),
         ]

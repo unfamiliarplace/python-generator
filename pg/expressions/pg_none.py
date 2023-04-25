@@ -1,10 +1,14 @@
-from typing import Self
-import pg
 
-class None_Node(pg.Mixin_Generatable, pg.Mixin_Renderable):
-    
-    def get_patterns(self: Self) -> list[str|pg.FP]:
+from expressions.pg_function_call import RT, Function_Call
+from formula.pg_formula_node import FN
+from formula.pg_formula_pattern import FP
+from formula.pg_formula_requirement import FR
+from mixins.pg_mixin_generatable import Mixin_Generatable
+from mixins.pg_mixin_renderable import Mixin_Renderable
+
+class None_Node(Mixin_Generatable, Mixin_Renderable):
+    def get_patterns(self) -> list[str|FP]:
         return [
-            pg.FP('None', weight=3),
-            pg.FP(pg.FN(pg.Function_Call, args=[pg.RT.NONE]), weight=1, reqs=pg.FR('functions')),
+            FP('None', weight=3),
+            FP(FN(Function_Call, args=[RT.NONE]), weight=1, reqs=FR('functions')),
         ]

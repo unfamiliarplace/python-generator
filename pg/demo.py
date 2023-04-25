@@ -1,45 +1,12 @@
+from pg import pygen
+import features
+
 if __name__ == '__main__':
+  off = ['maps', 'functions', 'classes', 'files', 'containers']
 
-  from feature import Feature
-  from pg import PythonGenerator
-  from lines.pg_line import Line
+  current_features = {}
+  for name in features.values:
+      current_features[name] = name not in off
 
-  feature_names = [
-      "variables",
-      "math",
-      "strings",
-      "booleans",
-      "containers",
-      "control",
-      "indexing",
-      "maps",
-      "imports",
-      "functions",
-      "methods",
-      "classes",
-      "files",
-
-      # line types
-      "comments",
-      "statements",
-      "expressions",
-      "decorators",
-      "symbol_practice",
-      "real_world"
-    ]
-
-  disabled = ['maps', 'functions', 'classes', 'files', 'containers']
-
-  features = {}
-
-  for name in feature_names:
-      feature = Feature(name)
-      feature.disable(name not in disabled)
-      feature.value(name not in disabled)
-
-      features[name] = feature
-
-  PythonGenerator().set_features(features)
-  line = Line()
-  render = str(line)
-  print(render)
+  line = pygen.generate(current_features)
+  print(line)

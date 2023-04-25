@@ -1,8 +1,10 @@
+COMMENT_TEXT = """
 # Draw the tree in the treelet area.
-# Check The Training Function #
+# Check The Training Function
 # high
 # Parse the generated weight vector.
-#'--flat', 'false', # removed from boxer
+#'--flat', 'false',
+# removed from boxer
 # View Menu
 # we shouldn't trigger corpus loading again in this case.
 # holes of its own so at the end of the queue. Putting it on
@@ -19,7 +21,7 @@
 # p = 'some e1.some e2.((believe e1 john e2) and (walk e2 mary))'
 # Groups of length five patterns and length three roots
 # Return the new classifier.
-# print '\t|'+self._rhs(prod),
+# print '\\t|'+self._rhs(prod),
 # The grammar has changed; try parsing it. If it doesn't
 # Use an agenda-based algorithm.
 # from a string to an integer
@@ -208,7 +210,7 @@
 # for (k,v) in self._bestp.items(): print(k,v)
 # With worder_len < 2, choose(worder_len, 2) will be 0.
 # that production's treelet could be attached to either the text
-# | / \ | | | |
+# | / \\ | | | |
 # if the Capitalisation is requested,
 # when scoring hypotheses
 # the number of 'VC' occurrences in Porter's reduced form in the
@@ -249,7 +251,8 @@
 #: for a list of tags you can use for colorizing.
 # keep _extension internally as a set
 # test corpus to look more like the training corpus.
-# Separator = str(''.join(perluniprops.chars('Separator'))) # i.e. \p{Z}
+# Separator = str(''.join(perluniprops.chars('Separator')))
+# i.e. \\p{Z}
 # Natural Language Toolkit: Decision Tree Classifiers
 # '.' prevents permutation
 # Use resolution
@@ -272,7 +275,7 @@
 # faster than Model 2
 # Production List
 # If variable is bound
-# ShowText(None, 'title', ((('this is text'*150)+'\n')*5))
+# ShowText(None, 'title', ((('this is text'*150)+'\\n')*5))
 # If there is no argument for the function, use class' own rule tuple.
 # Need to +1 in range to include the end-point.
 # children = dg.nodes[node_index]['deps']
@@ -332,7 +335,6 @@
 # The next best alternative is to start the server, have it close when
 # print('p(s_%d = %s, s_%d = %s) =' % (t0, s0, t1, s1), p)
 # single-quotes (because '' might be transformed to  if it is
-# conll_format += '\t%d\t%s\t%s\t%s\t%s\t%s\t%d\t%s\t%s\t%s\n' % (i+1, tokens[i], tokens[i], parse._tags[i], parse._tags[i], 'null', parse._arcs[i] + 1, 'null', '-', '-')
 # Look up the set of labels.
 # Converts pharaoh text format into list of tuples.
 # recall, we can reduce the number of division operations by one by
@@ -341,7 +343,7 @@
 # Note that SHIFT is always a valid operation
 # The dev set
 # self._autostep_button['text'] = 'Autostep'
-# # Add the producitons to the text widget, and colorize them.
+# Add the producitons to the text widget, and colorize them.
 # Ha Miim Alif, Ha Noon Shadda
 # period, then label tok as an abbreviation and NOT
 # Ask the user which parser to test,
@@ -391,7 +393,8 @@
 # Clear all selected rows.
 # Demonstrate LaTeX output
 # Check if we just completed a parse.
-#ID | Score (train) | #Rules | Template
+# ID | Score (train) |
+# Rules | Template
 # Transforms
 # Support expressions like: some x y.M = some x.some y.M
 # [xx] should the check for (ii) be modified??
@@ -430,7 +433,7 @@
 # Update the cells.
 # class InsideOutsideParser(BottomUpProbabilisticChartParser):
 # 2) use tautologies
-# the *i*\ th element of featuresets.
+# the *i*\\ th element of featuresets.
 # **attribs)
 # Decision tree:
 # The set of (fname, fval) pairs used by this classifier.
@@ -627,7 +630,7 @@
 # STEP 0
 # Ask the user which demo they want to use.
 # No. of ngrams in translation that matches the reference.
-# X Y\X =>(<) Y
+# X Y\\X =>(<) Y
 # JRip, KStar, LBR, LeastMedSq, LinearRegression, LMT, Logistic,
 # responses are matched top to bottom, so non-specific matches occur later
 # ToDo: Update with https://en.wikipedia.org/wiki/List_of_emoticons ?
@@ -751,7 +754,7 @@
 # Add extra space to make things easier
 #creating some features
 # Remove the child from our child list.
-# This is the \p{Open_Punctuation} from Perl's perluniprops
+# This is the \\p{Open_Punctuation} from Perl's perluniprops
 # combine the tree to reflect the reduction
 # Update lines to subtrees.
 # Same words with stems from a stemming algorithm
@@ -792,7 +795,8 @@
 # If it's a new edge, then get a new list of treetoks.
 # STEP 1: Remove instrumental case
 # Create a temporary input file
-# self.token() #swallow the ']'
+# self.token()
+#swallow the ']'
 # doesn't separate words from
 # Reset the height for the sentence window.
 # Draw lines to the children.
@@ -898,7 +902,7 @@
 # instead finding the maximum of the denominators for the precision
 # Edges
 # it receives SIGTERM (default), and run the browser as well. The user
-# Check The Parsing Function #
+# Check The Parsing Function
 # future work: consider other sentiment-laden idioms
 # Natural Language Toolkit: RSLP Stemmer
 # whether we should *also* classify it as a sentbreak.
@@ -1029,7 +1033,7 @@
 # STEP 4: Removal of final vowel
 # Backward crossed composition
 # A semi-hack to have elegant looking code below. As a result,
-# Note: In the original perl implementation, \p{Z} and \p{Zl} were used to
+# Note: In the original perl implementation, \\p{Z} and \\p{Zl} were used to
 # Earlier in step2b we had the rules:
 # if ( e aligned with f)
 # Methods
@@ -1077,7 +1081,7 @@
 # graph.
 # Parented trees
 # Natural Language Toolkit: Recursive Descent Parser Application
-# This is the \p{Close_Punctuation} from Perl's perluniprops
+# This is the \\p{Close_Punctuation} from Perl's perluniprops
 # while self.token(0) != ']':
 # also fall between [0,1].
 # If it's a nonterminal, then set up new bindings, so we
@@ -1102,7 +1106,7 @@
 # Get rid of any tags that were previously on the line.
 # will never be used.
 # Todo : because of probability = True => very slow due to
-# all the rules with score=max_score.
+# all the rules with score=max_s
 # NaiveBayesDependencyScorer
 # Is a leaf node.
 # Precision part of the score in Eqn 3
@@ -1272,7 +1276,7 @@
 # These all just delegate to either our frame or our MLB.
 # Example of has_role(PER, LOC)
 # Set user-defined probabilities
-# To avoid this, we can just return the lowest possible score.
+# To avoid this, we can just return the lowest possible s
 # Sometimes children can be pure strings,
 # desire to do an action
 # Natural Language Toolkit: Interface to the Stanford Parser
@@ -1309,7 +1313,7 @@
 # Initialize fonts.
 # Info(w_1 ... w_n) = log_2 [ (# of occurrences of w_1 ... w_n-1) / (# of occurrences of w_1 ... w_n) ]
 # Remember what production we're hovering over.
-# self._textwidget.insert('end', '\n')
+# self._textwidget.insert('end', '\\n')
 # Stepping Chart Parser
 # Check against all tokens
 # This is a maltparser quirk, it needs to be run
@@ -1467,7 +1471,7 @@
 # yes or no - raise an issue of certainty/correctness
 # close the concept's extension according to the properties in closures
 # this deals with empty nodes (frontier non-terminals)
-# # Inherit docs.
+# Inherit docs.
 # Display the scores.
 # strip common prefixes of the nouns
 # It's valid; Use _TOKEN_RE to tokenize the production,
@@ -1491,7 +1495,7 @@
 # This method is 7x faster which helps when parsing 40,000 sentences.
 # If we encounter a paragraph break, then it's a good sign
 # can questions, e.g. "can I have some cake?", "can I know truth?"
-# # [XX] IN PROGRESS:
+# [XX] IN PROGRESS:
 # (This only happens if the position's tag hasn't changed.)
 # WordNet corpus is installed.
 # say goodbye with some extra Zen wisdom.
@@ -1517,7 +1521,7 @@
 # Find the case-normalized type of the token. If it's
 # Handle the second operand
 # Natural Language Toolkit: Senna Interface
-# conll_format += '\t%d\t%s\t%s\t%s\t%s\t%s\t%d\t%s\t%s\t%s\n' % (i+1, tokens[i], tokens[i], 'null', 'null', 'null', parse._arcs[i] + 1, 'null', '-', '-')
+# conll_format += '\\t%d\\t%s\\t%s\\t%s\\t%s\\t%s\\t%d\\t%s\\t%s\\t%s\\n' % (i+1, tokens[i], tokens[i], 'null', 'null', 'null', parse._arcs[i] + 1, 'null', '-', '-')
 # After parsing, the parent of the immediate children
 # Clicking on a new edge selects it.
 # and breaks array and string indices. Make sure they never get chosen
@@ -1618,7 +1622,7 @@
 # This probably belongs in a more general-purpose location (as does
 # If a grammar was given, then display it.
 # - exp_nf_delta[x][y] = exp(nf[x] * delta[y])
-# in perl: m{://} or m{\S+\.\S+/\S+} or s{/}{ / }g;
+# in perl: m{://} or m{\\S+\\.\\S+/\\S+} or s{/}{ / }g;
 # Determine the most relevant features, and display them.
 # colditzjb commented on 9 Dec 2014
 # Maybe show the details of the semantic representation.
@@ -1627,9 +1631,10 @@
 # calculate the number of ngram matches
 # initialize the stack.
 # Get the leaves and initial categories
-# *i*\ th element of this list is the most appropriate label for
+# *i*\\ th element of this list is the most appropriate label for
 # nfarray performs the reverse operation. nfident is
-# s = re.sub(r'^#[^\s]*\s', '', s) # remove leading identifier
+# s = re.sub(r'^#[^\\s]*\\s', '', s)
+# remove leading identifier
 # iterate through the text, pushing the token onto
 # a function rather than just False.
 # See https://github.com/nltk/nltk/issues/1995#issuecomment-376741608
@@ -1674,7 +1679,7 @@
 # Copyright (C) 2001-2013 NLTK Project
 # { Word tokenization
 # Misc
-# - clitics covered (?!re|ve|ll|m|t|s|d)(\w)\b
+# - clitics covered (?!re|ve|ll|m|t|s|d)(\\w)\\b
 # Numeric character references in the 80-9F range are typically
 # Update the matrix view
 # print the assumptions
@@ -1794,7 +1799,7 @@
 # functionality for limiting the number of Tweets retrieved
 # Range U+FF65–FFDC encodes halfwidth forms, of Katakana and Hangul characters
 # to move its children to its parent
-# s += ' size="5,5";\n'
+# s += ' size="5,5";\\n'
 # It's probably a tuple containing a Synset and a list of
 # if we are filtering or showing thread readings, show threads
 # Add a display showing the error token itsels:
@@ -1850,16 +1855,16 @@
 # triangle.
 # Add v_n+1 to list of unvisited vertices
 # _extension += element + ', '
-# |[NP -> Det N ]| / \ |
+# |[NP -> Det N ]| / \\ |
 # leaf, it must match with the input.
 # Scan through the corpus, initializing the tag_positions
 # Don't allow resolution to itself or other types
-# UserIDs corresponding to\
+# UserIDs corresponding to\\
 # The argument must be a function.
 # Any production whose RHS is an extension of another production's RHS
 # STEP 6: Remove owned
-# if token[0] in "'\"": rhs.append(token[1:-1])
-# ie, (N\N)/(S/NP) => N\N
+# if token[0] in "'\\"": rhs.append(token[1:-1])
+# ie, (N\\N)/(S/NP) => N\\N
 # this sentence is known to fail under the WSJ parsing model
 # Size of chart levels
 # does a last ditch whitespace-based tokenization of whatever is left.
@@ -1914,7 +1919,7 @@
 # so g[u/var] is a satisfying assignment
 # Common sets of combinators used for English derivations.
 # try to place each word
-# text = regexp.sub(r' \1 \2 \3 ', text)
+# text = regexp.sub(r' \\1 \\2 \\3 ', text)
 # uncurry the arguments and find the base function
 # Move our position pointer to the end of the token.
 # i.e. 'you' is not really a thing that can be mapped this way, so this
@@ -2008,8 +2013,9 @@
 # STEP 4: Residual suffixes
 # Truncation line goes through origo, so ERRT cannot be counted
 # print(i+1, (tacc / tp_kn), i+1, (sacc / tp_kn), i+1, tacc, i+1, sacc)
-# malt_format += '%s\t%s\t%d\t%s\n' % (tokens[i], 'null', parse._arcs[i] + 1, 'null')
-# Doctest for patching issue #1926
+# malt_format += '%s\\t%s\\t%d\\t%s\\n' % (tokens[i], 'null', parse._arcs[i] + 1, 'null')
+# Doctest for patching issue
+# 1926
 # These are used to keep track of the set of tree tokens
 # use the same string as a label
 # Agreement Coefficients
@@ -2064,7 +2070,7 @@
 # The most recent operation
 # node x's. Otherwise, make room for ourselves.
 # Chart comparer:
-# - chervon quotes u'\xab' and u'\xbb' .
+# - chervon quotes u'\\xab' and u'\\xbb' .
 # Template(Feature1(args), Feature2(args), ...)
 # https://sf.net/forum/forum.php?thread_id=1675097&forum_id=473054
 # Natural Language Toolkit: Recursive Descent Parser
@@ -2103,7 +2109,7 @@
 # The different suffixes, divided into the algorithm's steps
 # { Orthographic Context Constants
 # sum of f-scores over all sentences for each n-gram order
-# Find reference with the best NIST score.
+# Find reference with the best NIST s
 # else: rule too inaccurate, discard and try next
 # Interface function to emulate other corpus readers
 # ans_types.append('number')
@@ -2153,7 +2159,7 @@
 # Recursively try to fill in the rest of the holes in the
 # We build up text one word at a time using the preceding context.
 # STEP 3: Derivational suffixes
-# Note: [A-Za-z] is approximated by [^\W\d] in the general case.
+# Note: [A-Za-z] is approximated by [^\\W\\d] in the general case.
 # every iteration, in cases requiring efficiency, the number of tokens
 # Apply keyword parameters
 #Template(Word([0,1]), Word([1]), will not appear in the output.
@@ -2250,7 +2256,7 @@
 # U+1F3F4 🏴 followed by emoji tag sequences:
 # Count OT (length of the line from origo to truncation line that goes through (ui, oi))
 # will also be > available_end, since the
-# Split off the comment (but don't split on '\#')
+# Split off the comment (but don't split on '\\#')
 # c_graph = Union(c_graph, v_n+1)
 # Update _rules_by_position
 # We could do parent.manage() here instead, if we wanted.
@@ -2300,7 +2306,8 @@
 # Ensures the left functor takes an argument on the right
 # be the period. Find a log likelihood ratio that
 # Sort votes according to the values
-# (re.compile(r"\s([:,])\s$"), r"\1"), # .strip() takes care of it.
+# (re.compile(r"\\s([:,])\\s$"), r"\\1"),
+# .strip() takes care of it.
 # Update the classifier weights
 # Return it
 # Recover parse tree
@@ -2309,7 +2316,7 @@
 # If any ancestor is draggable, set up a motion callback.
 # parse, do nothing. (flag error location?)
 # boundaries are at the same location, no transformation required
-# self._textwidget.insert('end', '\t|'+self._rhs(prod))
+# self._textwidget.insert('end', '\\t|'+self._rhs(prod))
 # not the ISO subset of two-letter regional indicator symbols.
 # before any chart is loaded).
 # ------------
@@ -2330,7 +2337,7 @@
 # Natural Language Toolkit: Tagset Mapping
 # Natural Language Toolkit: TnT Tagger
 # this would need to put requirements on what encoding is used. But
-# #if dec_func[k] > 0:
+# if dec_func[k] > 0:
 # Print out the formulas in a textual format.
 # All modifications to the class are performed by inheritance.
 # (max_v) - (1-max_v) + 1 = 2 * max_v.
@@ -2406,7 +2413,8 @@
 # It's best to use decision function as follow BUT it's not supported yet for sparse SVM
 # Natural Language Toolkit: Confusion Matrices
 # writing error analysis to file
-# Line_Separator = str(''.join(perluniprops.chars('Line_Separator'))) # i.e. \p{Zl}
+# Line_Separator = str(''.join(perluniprops.chars('Line_Separator')))
+# i.e. \\p{Zl}
 # Traverse the tree depth-first keeping a list of ancestor nodes to the root.
 # regular expression, and a list of possible responses,
 # add extra space to make things easier
@@ -2419,7 +2427,8 @@
 # Evaluation
 # Check leaves below us.
 # print(len(s))
-# (re.compile(r"\s([&*])\s"), r" \g<1> "), # Unknown pad.
+# (re.compile(r"\\s([&*])\\s"), r" \\g<1> "),
+# Unknown pad.
 # cover the span.
 # above us, draw a vertical branch in that column.
 # if there are accessible_vars on the path
@@ -2481,7 +2490,7 @@
 # Write a key
 # Rule-based Non-Projective Parser
 # Our queue
-# Support expressions like: \x y.M = \x.\y.M
+# Support expressions like: \\x y.M = \\x.\\y.M
 # assert m = () or matrix[rowidx][i] in (None, corner), (
 # Natural Language Toolkit: First-order Resolution-based Theorem Prover
 # Write the training data file.
@@ -2527,7 +2536,7 @@
 # | N -> 'cat' | |
 # tableau_test('some x.all y.sees(x,y)')
 # Iterate over unvisited vertices
-# this list is the most appropriate label for the *i*\ th element
+# this list is the most appropriate label for the *i*\\ th element
 # right-justified, when possible); and move the remaining text
 # Prints the sequence of derivation steps.
 # Return the final chart.
@@ -2584,7 +2593,8 @@
 # Define two demos. Each demo has a sentence and a grammar.
 # self.next()
 # Start stemming
-# s = re.sub(r'\w+:', '', s) # remove role tags
+# s = re.sub(r'\\w+:', '', s)
+# remove role tags
 # Internal Methods
 # Move the widget out of the way, for now.
 # However, in THIS case, we need to handle the consecutive rules
@@ -2714,7 +2724,7 @@
 # add new symbols to the symbol table and repopulate the output
 # Copyright 2013 Matthew Honnibal
 # self._lastoper1['text'] = 'Show Grammar'
-# Update _rules_by_score.
+# Update _rules_by_s
 # F_penalty: penalize occurrences w/o a period
 # for this instance's actual label.
 # Construct a format string for row values
@@ -2995,11 +3005,11 @@
 # Extract gold & test chunks
 # Keep a list of all feature names.
 # TweetTokenizer.WORD_RE and TweetTokenizer.PHONE_WORD_RE represent
-# (re.compile(r'\s([?!])\s'), r'\g<1>'),
+# (re.compile(r'\\s([?!])\\s'), r'\\g<1>'),
 # from the previous token.
 # line segment when counting the intersection point
 # find closest paragraph break
-# "Regular Expression Syntax Summary:\n\n"
+# "Regular Expression Syntax Summary:\\n\\n"
 # If they select a example, apply it.
 # python versions
 # convert tree back to bracketed text
@@ -3057,7 +3067,7 @@
 # Copyright (C) 2005-2007 Oregon Graduate Institute
 # now check required dictionaries
 # Set up the main window.
-# # Delete the old widgets..
+# Delete the old widgets..
 # Instances of type-raising combinators
 # Basic idea: Keep track of the rules that apply at each position.
 # and get_rare_abbreviations.
@@ -3068,7 +3078,7 @@
 # Build the senna command to run the tagger
 # skip this possible 'self' atom
 # Construct the lexicon
-# X Y\X =>(<T) Y/(Y\X) Y\X =>(>) Y
+# X Y\\X =>(<T) Y/(Y\\X) Y\\X =>(>) Y
 # List of contractions adapted from Robert MacIntyre's tokenizer.
 # Decide whether the next word is at a sentence boundary.
 # Percentage of text left of the scrollbar position
@@ -3148,7 +3158,7 @@
 # add other nodes centered on their children,
 # if the current example is not the first example
 # if c2: c2.itemconfig(t2, width=2, fill='gray60')
-# NOTE: a simple but ugly hack to make this parser happy with double '\t's
+# NOTE: a simple but ugly hack to make this parser happy with double '\\t's
 # Ensures that denominator is minimum 1 to avoid ZeroDivisionError.
 # Finally, strips heading and trailing spaces
 # inverse variance, so the parameter conversion is 1.0/sigma**2.
@@ -3186,11 +3196,11 @@
 # Firing an event so that rendering of widgets happen in the mainloop thread
 # Initialize trg_word to align with the NULL token
 # word is in the first position.
-# ) # Note that this K is different from the K from NIST.
+# Note that this K is different from the K from NIST.
 # Most of the work here is making sure that we put the right
 # Connect the source words
 # inductively calculate remaining backward values
-# ie, which => (N\N)/(S/NP)
+# ie, which => (N\\N)/(S/NP)
 # length three suffixes
 # This particular element is used in a couple ways, so we define it
 # see: https://en.wikipedia.org/wiki/ISO/IEC_8859-1#Similar_character_sets
@@ -3237,7 +3247,7 @@
 # sanity check
 # Natural Language Toolkit: Classifier Utility Functions
 # Participle of verb - not supported by corpus
-# (\x.\y.sees(x,y)(john))(mary)
+# (\\x.\\y.sees(x,y)(john))(mary)
 # Highlight the productions that can be reduced.
 # tokenize the sentence
 #For instance, importing a concrete subclass (Feature is abstract)
@@ -3303,7 +3313,7 @@
 # (excluding the ones that immediately preceed the item) based
 # Russian model for nltk.pos_tag() uses it.
 # repeat is True, thus close output file and
-# Initialize a valuation of non-logical constants."""
+# Initialize a valuation of non-logical constants.
 # any of the possible labels.
 # color='#000000', font=self._font)
 # _class_ to something new:
@@ -3334,7 +3344,7 @@
 # If we changed the chart, then generate the edge.
 # named(x0, john, per, 0)
 # add a unary concept corresponding to the set of entities
-# Show the score.
+# Show the s
 # guess type and properties
 # Chat-80 relation metadata bundles needed to build the valuation
 # productions (e.g., [Production: PP -> ]) very well.
@@ -3394,7 +3404,7 @@
 # UI is 0, define SW as infinity
 # If parsed is a propositional letter 'p', 'q', etc, it could be in valuation.symbols
 # e.g. "is it possible?", "is this true?"
-# Unicode codepoint properties with the \p{} syntax.
+# Unicode codepoint properties with the \\p{} syntax.
 # remove unused columns, right to left
 # it gets the implicit value 'None'.
 # the new button press.
@@ -3417,7 +3427,7 @@
 # contains at least 3 letters.
 # so we need to force it to have a clear correct behaviour.
 # and organized by length, are listed in tuples.
-# math.log(sys.float_info.min) returns a 0 precision score.
+# math.log(sys.float_info.min) returns a 0 precision s
 # Prefixes added due to derivation Names
 # Remove cycle nodes from b_graph; B = B - cycle c
 # Run a partial parser, and extract gold & test chunks
@@ -3435,7 +3445,7 @@
 # flags
 # take the longest common subsequence.
 # first in x; to avoid StopIteration problems due to assuming an order
-# Only splits on '\n', never inside the sentence.
+# Only splits on '\\n', never inside the sentence.
 # It must be a lambda expression, so use curried form
 # The decorator has its own versions of 'result' and 'proof'
 # STEP 3: Cases
@@ -3556,7 +3566,7 @@
 # But hopefully we have observations!
 # If requested, strip off blank lines.
 # e.g. "you stink!"
-# each of the given featuresets, where the *i*\ th element of
+# each of the given featuresets, where the *i*\\ th element of
 # Output the resulting parses
 # Check all the leaves
 # var isn't free in parsed
@@ -3570,7 +3580,6 @@
 # Use the classifier to pick a tag. If a cutoff probability
 # Every method that adds or removes a child must make
 # Based on the EdgeI class from NLTK.
-# """
 # Check if the change causes any rule at this position to
 # Map the different apostrophe characters to a single consistent one
 # sum matches and max-token-lengths over all sentences
@@ -3689,7 +3698,7 @@
 # inherit docs from BrillTemplateI
 # From the prediction match to the operation
 # just return (no new edges to add).
-# increment # of nodes counter
+# increment of nodes counter
 # two child subsequences
 # Decode the line.
 # Incremental CFG Chart Parsers
@@ -3705,7 +3714,7 @@
 # for i in range(len(model.classes_)):
 # Value Access
 # Christian Huyck, o qual infelizmente não tive a oportunidade de ler. O
-# Calculates RIBES for each reference and returns the best score.
+# Calculates RIBES for each reference and returns the best s
 # featureset.
 # the cluster means
 # Set up colors for the devset box
@@ -3743,7 +3752,7 @@
 # Properties
 # max_precision -= min_precision
 # Natural Language Toolkit: Interface to the Stanford Segmenter
-# # Make a new one.
+# Make a new one.
 # Natural Language Toolkit: Wordfreq Application
 # (right click?)
 # If conll_file is a ZipFilePathPointer,
@@ -3753,10 +3762,11 @@
 # Support expressions like: DRS([x y],C) = DRS([x, y],C)
 # dev set scrollbars
 # Much of the GUI code is imported from concordance.py; We intend to merge these tools together
-# raise ValueError # Unexpected HTML
+# raise ValueError
+# Unexpected HTML
 # Calculate the deltas for this iteration, using Newton's method.
 # Every word is put into lower case for normalization.
-# r'\U0001F3F4[\U000E0000-\U000E007E]{5}\U000E007F'
+# r'\\U0001F3F4[\\U000E0000-\\U000E007E]{5}\\U000E007F'
 # no match, so backtrack
 # extractor and doesn't accept or return an index.
 # Check if we're done
@@ -3799,7 +3809,7 @@
 # with group-macros labelled as %1, %2.
 # When the chart is incremental, we only have to look for
 # Add always-on features:
-# - unicode quotes u'\u2018', u'\u2019', u'\u201c' and u'\u201d'
+# - unicode quotes u'\\u2018', u'\\u2019', u'\\u201c' and u'\\u201d'
 # Note that (self.ui, self.oi) cannot be (0.0, 0.0) and self.coords has different coordinates
 # the pattern backwards (with lookahead assertions). This can be
 # Before proceeding to compute NIST, perform sanity checks.
@@ -3810,7 +3820,7 @@
 # all the holes at level i of the formula tree are filled
 # It's not a predicate expression ("P(x,y)"), so leave arguments curried
 # Collects the various precision values for the different ngram orders.
-# Check the Initial Feature #
+# Check the Initial Feature
 # if a bound variable is the thing being replaced
 # All acute accents are replaced by grave accents.
 # put imports here to avoid circult dependencies
@@ -4000,7 +4010,7 @@
 # Natural Language Toolkit: GLEU Score
 # be reimplemented
 # but.. lines???
-# Check The Transition #
+# Check The Transition
 # Natural Language Toolkit: Tagger Interface
 # for prod in self._cfg.productions():
 # Parser modification
@@ -4008,7 +4018,7 @@
 # end nested functions
 # suggest using NLTK's mailing list for Portuguese for any discussion.
 # Construct an encoding from the training data.
-# # Find the best path from S to each nonterminal
+# Find the best path from S to each nonterminal
 # If vowels are spread across multiple levels, they should be
 #forms removed. Default for combinations is (1, len(L)).
 # or.. just have users use LazyMap directly?
@@ -4061,7 +4071,7 @@
 # Apply each rule to the entire corpus, in order
 # XXX: it is stated in module docs that there is no function versions
 # Note: CONTRACTIONS4 are not used in tokenization.
-# Comparing \x.M and \y.N. Relabel y in N with x and continue.
+# Comparing \\x.M and \\y.N. Relabel y in N with x and continue.
 # prod_by_lhs = {}
 # Standard parser methods
 # Twitter username:
@@ -4087,7 +4097,7 @@
 # The user can cancel training manually:
 # If it's a non-matching terminal, fail.
 # incvnt = i + 1 * self.k / math.log(
-# p_n[i] = incvnt / p_i.denominator\
+# p_n[i] = incvnt / p_i.denominator\\
 # setting negative probabilities to zero and normalizing.
 # Create the index.
 # raise KeyError, "There is no GlueDict entry for sem type '%s' (for '%s')" % (sem, word)
@@ -4220,3 +4230,8 @@
 # 'architecture' becomes 'vcccvcvccvcv'
 # Update the grammar label
 # length from origo to truncation line is 0
+"""
+
+# Remove blank first and last used for formatting
+COMMENT_LINES = COMMENT_TEXT.split('\n')[1:-1]
+COMMENT_LINES = list(filter(lambda L: bool(L.strip()), COMMENT_LINES))

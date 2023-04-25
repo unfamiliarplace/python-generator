@@ -1,9 +1,9 @@
-from enum import Enum
-from typing import Self
-import pg
+from formula.pg_formula_pattern import FP
+from mixins.pg_mixin_generatable import Mixin_Generatable
+from mixins.pg_mixin_renderable import Mixin_Renderable
 
 # Return types
-class Return_Type(Enum):
+class Return_Type():
     ANY = 0
     NONE = 1
     BOOL = 2
@@ -14,15 +14,15 @@ class Return_Type(Enum):
 
 RT = Return_Type
 
-class Function_Call(pg.Mixin_Generatable, pg.Mixin_Renderable):
+class Function_Call(Mixin_Generatable, Mixin_Renderable):
     
-    def __init__(self: Self, return_type: RT=RT.ANY, args: list[str]=[], kwargs: dict[str, str]={}) -> None:
-        super().__init__()
+    def __init__(self, return_type: int=RT.ANY, args: list[str]=[], kwargs: dict[str, str]={}) -> None:
         self.return_type = return_type
         self.args = args
         self.kwargs = kwargs
+        super().__init__()
 
-    def get_patterns(self: Self) -> list[str|pg.FP]:
+    def get_patterns(self) -> list[str|FP]:
         return [
             'do_nothing()'
         ]

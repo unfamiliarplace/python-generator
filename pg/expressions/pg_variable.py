@@ -1,12 +1,10 @@
-from typing import Self
-from js_random import JS_Random as R
-import pg
+from util.js_random import JS_Random as R
 
-class Variable(pg.Mixin_Generatable, pg.Mixin_Renderable):
+from formula.pg_formula_pattern import FP
+from mixins.pg_mixin_generatable import Mixin_Generatable
+from mixins.pg_mixin_renderable import Mixin_Renderable
 
-    patterns = [
-        'integer', 'string', 'float', 'boolean', 'container', 'misc', 'index', 'element', 'placeholder'
-    ]
+class Variable(Mixin_Generatable, Mixin_Renderable):
 
     type_to_names = {
         'integer': ['n', 'm', 'n_students', 'n_doughnuts', 'count', 'total'],
@@ -21,17 +19,16 @@ class Variable(pg.Mixin_Generatable, pg.Mixin_Renderable):
         'special': ['__name__', '__main__']
     }
 
-    def __init__(self: Self, type: str='any') -> None:
-        super().__init__()
+    def __init__(self, type: str='any') -> None:
         self.type = type
-
+        super().__init__()
     
-    def get_patterns(self: Self) -> list[str|pg.FP]:
+    def get_patterns(self) -> list[str|FP]:
         return [
             'integer', 'string', 'float', 'boolean', 'container', 'misc', 'index', 'element', 'placeholder'
         ]
 
-    def generate(self: Self) -> str:
+    def generate(self) -> str:
         type_ = self.type if self.type != 'any' else super().generate()
         name = R.choose_from(self.type_to_names[type_])
 

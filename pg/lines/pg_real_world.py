@@ -1,4 +1,4 @@
-from js_random import JS_Random as R
+from util.js_random import JS_Random as R
 from data.real_world.real_world_lines import REAL_WORLD_LINES
 
 from mixins.pg_mixin_generatable import Mixin_Generatable

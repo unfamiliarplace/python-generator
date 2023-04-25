@@ -19,6 +19,5 @@ class Line(Mixin_Generatable, Mixin_Renderable):
             FP(FN(Symbol_Practice), reqs=FR('symbol_practice'), weight=1),
             FP(FN(Real_World), reqs=FR('real_world'), weight=5),
             FP(FN(Decorator), reqs=FR('decorators'), weight=1),
-            FP(FN(Comment), reqs=FR('comments'), weight=3),
-            FP('Test', reqs=FR('comments'), weight=3),
+            FP(FN(Comment), reqs=FR('comments'), weight=3)
         ]

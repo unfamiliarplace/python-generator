@@ -1,5 +1,5 @@
 
-from js_random import JS_Random as R
+from util.js_random import JS_Random as R
 from data.comments.comment_lines import COMMENT_LINES
 from expressions.pg_expression import Expression
 

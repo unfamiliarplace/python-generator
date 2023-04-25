@@ -1,4 +1,4 @@
-import pg as pg
+import features
 
 class Requirement_Mode():
     NONE = 0
@@ -20,9 +20,9 @@ class Formula_Requirement():
 
         # argh
         req_checkers = {
-            RM.NONE: pg.PythonGenerator().none,
-            RM.ANY: pg.PythonGenerator().any,
-            RM.ALL: pg.PythonGenerator().all,
+            RM.NONE: features.none,
+            RM.ANY: features.any,
+            RM.ALL: features.all,
         }
 
         return req_checkers[self.req_mode](*self.reqs)

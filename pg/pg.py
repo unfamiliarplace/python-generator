@@ -1,42 +1,17 @@
-from feature import Feature, Dummy_Feature
 from lines.pg_line import Line
+import features
 
 class PythonGenerator():
 
-    def generate(self, current_features: dict[str, Feature]={}) -> str:
+    def make_line(current_features: dict[str, bool]={}) -> Line:
         if current_features:
             current_features = dict(current_features) # Transcrypt bs
             for (k, v) in current_features.items():
-                features[k] = v
+                features.values[k] = v
         
-        return str(Line())
-    
-    # Requirement checkers
+        return Line()
 
-    def on(self, feature_name: str) -> bool:
-        return features.get(feature_name, Dummy_Feature()).value()
+    def generate(current_features: dict[str, bool]={}) -> str:
+        return str(PythonGenerator.make_line(current_features))     
 
-    def none(self, *features_names: str) -> bool:
-        return True
-
-    def any(self, *feature_names: str) -> bool:
-        for feature_name in feature_names:
-            if features.get(feature_name, Dummy_Feature()).value():
-                return True
-        else:
-            return False
-
-    def all(self, *feature_names: str) -> bool:
-        for feature_name in feature_names:
-            if not features.get(feature_name, Dummy_Feature()).value():
-                return False
-        else:
-            return True
-
-# create JS variable
-features = {
-    'real_world': True,
-    'expressions': True,
-    'math': True
-}
-pygen = PythonGenerator()
+pygen = PythonGenerator

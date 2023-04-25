@@ -1,4 +1,4 @@
-from js_random import JS_Random as R
+from util.js_random import JS_Random as R
 
 from mixins.pg_mixin_generatable import Mixin_Generatable
 from mixins.pg_mixin_renderable import Mixin_Renderable

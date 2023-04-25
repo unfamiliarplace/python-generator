@@ -1,7 +1,7 @@
 from formula.pg_formula_pattern import FP
 from mixins.pg_mixin_generatable import Mixin_Generatable
 from mixins.pg_mixin_renderable import Mixin_Renderable
-from js_random import JS_Random as R
+from util.js_random import JS_Random as R
 
 class Import(Mixin_Generatable, Mixin_Renderable):
 

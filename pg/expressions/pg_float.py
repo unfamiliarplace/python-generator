@@ -1,4 +1,4 @@
-from js_random import JS_Random as R
+from util.js_random import JS_Random as R
 
 from expressions.pg_function_call import RT, Function_Call
 import expressions.pg_number as PG_N

@@ -1,10 +1,15 @@
-from typing import Self
-import pg
 
-class Number(pg.Mixin_Generatable, pg.Mixin_Renderable):
+from expressions.pg_float import Float
+from expressions.pg_integer import Integer
+from formula.pg_formula_node import FN
+from formula.pg_formula_pattern import FP
+from mixins.pg_mixin_generatable import Mixin_Generatable
+from mixins.pg_mixin_renderable import Mixin_Renderable
 
-    def get_patterns(self: Self) -> list[str|pg.FP]:
+class Number(Mixin_Generatable, Mixin_Renderable):
+
+    def get_patterns(self) -> list[str|FP]:
         return [
-            pg.FP(pg.FN(pg.Integer), weight=3),
-            pg.FP(pg.FN(pg.Float), weight=1)
+            FP(FN(Integer), weight=3),
+            FP(FN(Float), weight=1)
         ]

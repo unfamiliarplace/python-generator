@@ -1,5 +1,16 @@
-# create JS variable
-names = [
+# Data
+
+names = [    
+
+      # line types
+      "comments",
+      "statements",
+      "expressions",
+      "decorators",
+      "symbol_practice",
+      "real_world",
+
+      # components
       "variables",
       "math",
       "strings",
@@ -13,22 +24,27 @@ names = [
       "methods",
       "classes",
       "files",
-
-      # line types
-      "comments",
-      "statements",
-      "expressions",
-      "decorators",
-      "symbol_practice",
-      "real_world"
     ]
 
-values = {name: False for name in names}
+values = {}
+
+# Utilities
+
+def reset_features(polarity: bool=False) -> None:
+    for name in names:
+        values[name] = polarity
+
+def update_features(current_features: dict[str, bool]={}) -> None:
+    if current_features:
+        reset_features()
+        current_features = dict(current_features) # Transcrypt bs
+        for (key, value) in current_features.items():
+            values[key] = value
 
 # Requirement checkers
 
 def on(feature_name: str) -> bool:
-    return values.get(feature_name, False())
+    return values.get(feature_name, False)
 
 def none(*_) -> bool:
     return True
@@ -46,3 +62,7 @@ def all(*feature_names: str) -> bool:
             return False
     else:
         return True
+
+# Initialize
+
+reset_features(False)

@@ -2,18 +2,22 @@ import random
 
 class JS_Random():
 
+    @staticmethod
     def flip_coin(chance: float=0.5) -> bool:
         return (random.randint(0, 100) / 100) < chance
     
+    @staticmethod
     def flip_against(chance: float=0.5) -> bool:
         return JS_Random.flip_coin(1 - chance)
     
+    @staticmethod
     def choose_from(items: list) -> object:
         if not items:
             return None
         else:
             return random.choice(items)
     
+    @staticmethod
     def number_between(lower: int, upper: int, decimal: bool=False) -> int|float:
         if decimal:
             lower *= 10

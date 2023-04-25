@@ -1,4 +1,3 @@
-
 class Feature():
 
     def __init__(self, name: str) -> None:
@@ -16,3 +15,11 @@ class Feature():
     
     def is_disabled(self) -> bool:
         return self._disabled
+    
+class Dummy_Feature(Feature):
+
+    def __init__(self) -> None:
+        super().__init__('dummy')
+    
+    def value(self, value: bool=None) -> bool:
+        return False

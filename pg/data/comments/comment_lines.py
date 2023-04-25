@@ -1106,7 +1106,7 @@ COMMENT_TEXT = """
 # Get rid of any tags that were previously on the line.
 # will never be used.
 # Todo : because of probability = True => very slow due to
-# all the rules with score=max_score.
+# all the rules with score=max_s
 # NaiveBayesDependencyScorer
 # Is a leaf node.
 # Precision part of the score in Eqn 3
@@ -1276,7 +1276,7 @@ COMMENT_TEXT = """
 # These all just delegate to either our frame or our MLB.
 # Example of has_role(PER, LOC)
 # Set user-defined probabilities
-# To avoid this, we can just return the lowest possible score.
+# To avoid this, we can just return the lowest possible s
 # Sometimes children can be pure strings,
 # desire to do an action
 # Natural Language Toolkit: Interface to the Stanford Parser
@@ -2109,7 +2109,7 @@ COMMENT_TEXT = """
 # The different suffixes, divided into the algorithm's steps
 # { Orthographic Context Constants
 # sum of f-scores over all sentences for each n-gram order
-# Find reference with the best NIST score.
+# Find reference with the best NIST s
 # else: rule too inaccurate, discard and try next
 # Interface function to emulate other corpus readers
 # ans_types.append('number')
@@ -2724,7 +2724,7 @@ COMMENT_TEXT = """
 # add new symbols to the symbol table and repopulate the output
 # Copyright 2013 Matthew Honnibal
 # self._lastoper1['text'] = 'Show Grammar'
-# Update _rules_by_score.
+# Update _rules_by_s
 # F_penalty: penalize occurrences w/o a period
 # for this instance's actual label.
 # Construct a format string for row values
@@ -3344,7 +3344,7 @@ COMMENT_TEXT = """
 # If we changed the chart, then generate the edge.
 # named(x0, john, per, 0)
 # add a unary concept corresponding to the set of entities
-# Show the score.
+# Show the s
 # guess type and properties
 # Chat-80 relation metadata bundles needed to build the valuation
 # productions (e.g., [Production: PP -> ]) very well.
@@ -3427,7 +3427,7 @@ COMMENT_TEXT = """
 # contains at least 3 letters.
 # so we need to force it to have a clear correct behaviour.
 # and organized by length, are listed in tuples.
-# math.log(sys.float_info.min) returns a 0 precision score.
+# math.log(sys.float_info.min) returns a 0 precision s
 # Prefixes added due to derivation Names
 # Remove cycle nodes from b_graph; B = B - cycle c
 # Run a partial parser, and extract gold & test chunks
@@ -3714,7 +3714,7 @@ COMMENT_TEXT = """
 # for i in range(len(model.classes_)):
 # Value Access
 # Christian Huyck, o qual infelizmente não tive a oportunidade de ler. O
-# Calculates RIBES for each reference and returns the best score.
+# Calculates RIBES for each reference and returns the best s
 # featureset.
 # the cluster means
 # Set up colors for the devset box

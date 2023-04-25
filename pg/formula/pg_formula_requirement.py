@@ -1,4 +1,4 @@
-import pg
+import pg as pg
 
 class Requirement_Mode():
     NONE = 0

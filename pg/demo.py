@@ -1,7 +1,7 @@
 if __name__ == '__main__':
 
   from feature import Feature
-  from pg import PythonGenerator
+  import pg
   from lines.pg_line import Line
 
   feature_names = [
@@ -39,7 +39,8 @@ if __name__ == '__main__':
 
       features[name] = feature
 
-  PythonGenerator().set_features(features)
+  pg.features = features
+  pg.PythonGenerator().set_features(features)
   line = Line()
   render = str(line)
   print(render)

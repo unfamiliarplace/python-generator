@@ -52,4 +52,4 @@ class Comment(Mixin_Generatable, Mixin_Renderable):
     def _generate_type_3(self) -> str:
         """line of code # English comment"""
         line = super().generate()
-        return f'{line} # {R.choose_from[self.postfixes]}'
+        return f'{line} # {R.choose_from(self.postfixes)}'

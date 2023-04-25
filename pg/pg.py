@@ -1,47 +1,42 @@
-from feature import Feature
+from feature import Feature, Dummy_Feature
 from lines.pg_line import Line
 
 class PythonGenerator():
 
-    # Singleton
-
-    def __new__(cls):        
-        if not hasattr(cls, 'instance'):
-            cls.instance = super().__new__(cls)
-        return cls.instance
-
-    def set_features(self, features: dict[str, Feature]):
-        self.features = features
-        return self
-
-    def generate(self, features: dict[str, Feature]=None) -> str:
-        if features is not None:
-            self.set_features(features)
+    def generate(self, current_features: dict[str, Feature]={}) -> str:
+        if current_features:
+            current_features = dict(current_features) # Transcrypt bs
+            for (k, v) in current_features.items():
+                features[k] = v
         
         return str(Line())
-        
-
+    
     # Requirement checkers
 
     def on(self, feature_name: str) -> bool:
-        return self.features[feature_name].value()
+        return features.get(feature_name, Dummy_Feature()).value()
 
     def none(self, *features_names: str) -> bool:
         return True
 
     def any(self, *feature_names: str) -> bool:
         for feature_name in feature_names:
-            if self.features[feature_name].value():
+            if features.get(feature_name, Dummy_Feature()).value():
                 return True
         else:
             return False
 
     def all(self, *feature_names: str) -> bool:
         for feature_name in feature_names:
-            if not self.features[feature_name].value():
+            if not features.get(feature_name, Dummy_Feature()).value():
                 return False
         else:
             return True
 
 # create JS variable
+features = {
+    'real_world': True,
+    'expressions': True,
+    'math': True
+}
 pygen = PythonGenerator()

@@ -1,9 +1,10 @@
-import pg
+from formula.pg_formula_pattern import FP
+from mixins.pg_mixin_generatable import Mixin_Generatable
+from mixins.pg_mixin_renderable import Mixin_Renderable
 
+class Decorator(Mixin_Generatable, Mixin_Renderable):
 
-class Decorator(pg.Mixin_Generatable, pg.Mixin_Renderable):
-
-    def get_patterns(self) -> list[str|pg.FP]:
+    def get_patterns(self) -> list[str|FP]:
         return [
         'lru_cache', 'jit', 'count_calls', 'dataclass', 'singleton', 'use_unit', 'staticmethod', 'singledispatch', 'register'
     ]

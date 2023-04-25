@@ -1,8 +1,10 @@
-import pg
+from formula.pg_formula_node import FN
+from formula.pg_formula_requirement import Formula_Requirement
+from formula.pg_sequence import Sequence
 
 class Formula_Pattern():
 
-    def __init__(self, *nodes: str|pg.FN, reqs: pg.Formula_Requirement=None, weight: int=1, brackets: bool=False, prefix: str='', suffix: str='') -> None:
+    def __init__(self, *nodes: str|FN, reqs: Formula_Requirement=None, weight: int=1, brackets: bool=False, prefix: str='', suffix: str='') -> None:
         self.nodes = nodes
         self.reqs = reqs
         self.weight = weight
@@ -22,8 +24,8 @@ class Formula_Pattern():
                 return True
         return False
     
-    def generate(self) -> pg.Sequence:
-        return pg.Sequence(*(str(c) for c in self.nodes))
+    def generate(self) -> Sequence:
+        return Sequence(*(str(c) for c in self.nodes))
         
     def __str__(self) -> str:
         s = self.generate()

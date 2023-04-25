@@ -1,12 +1,10 @@
 from js_random import JS_Random as R
-import pg
 
+from formula.pg_formula_pattern import FP
+from mixins.pg_mixin_generatable import Mixin_Generatable
+from mixins.pg_mixin_renderable import Mixin_Renderable
 
-class Variable(pg.Mixin_Generatable, pg.Mixin_Renderable):
-
-    patterns = [
-        'integer', 'string', 'float', 'boolean', 'container', 'misc', 'index', 'element', 'placeholder'
-    ]
+class Variable(Mixin_Generatable, Mixin_Renderable):
 
     type_to_names = {
         'integer': ['n', 'm', 'n_students', 'n_doughnuts', 'count', 'total'],
@@ -22,11 +20,10 @@ class Variable(pg.Mixin_Generatable, pg.Mixin_Renderable):
     }
 
     def __init__(self, type: str='any') -> None:
-        super().__init__()
         self.type = type
-
+        super().__init__()
     
-    def get_patterns(self) -> list[str|pg.FP]:
+    def get_patterns(self) -> list[str|FP]:
         return [
             'integer', 'string', 'float', 'boolean', 'container', 'misc', 'index', 'element', 'placeholder'
         ]

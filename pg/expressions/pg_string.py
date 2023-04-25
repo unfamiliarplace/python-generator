@@ -1,26 +1,34 @@
 from js_random import JS_Random as R
-import pg
 
+from expressions.pg_function_call import RT, Function_Call
+from expressions.pg_integer import Integer
+from expressions.pg_variable import Variable
+from formula.pg_formula_node import FN
+from formula.pg_formula_pattern import FP
+from formula.pg_formula_requirement import FR
+from mixins.pg_mixin_generatable import Mixin_Generatable
+from mixins.pg_mixin_renderable import Mixin_Renderable
+from mixins.pg_mixin_renderable_operation import Mixin_Renderable_Operation
 
-class String(pg.Mixin_Generatable, pg.Mixin_Renderable):
-    def get_patterns(self) -> list[str|pg.FP]:
+class String(Mixin_Generatable, Mixin_Renderable):
+    def get_patterns(self) -> list[str|FP]:
         return [
-            pg.FP(pg.FN(String_Literal), weight=4),
-            pg.FP(pg.FN(String_Operation), weight=1),
-            pg.FP(pg.FN(pg.Function_Call, [pg.RT.STR]), weight=1, reqs=pg.FR('functions')),
-            pg.FP(pg.FN(pg.Variable, 'string'), weight=2, reqs=pg.FR('variables')),
+            FP(FN(String_Literal), weight=4),
+            FP(FN(String_Operation), weight=1),
+            FP(FN(Function_Call, [RT.STR]), weight=1, reqs=FR('functions')),
+            FP(FN(Variable, 'string'), weight=2, reqs=FR('variables')),
             # TODO function str(number, bool, string???, input???)
         ]
 
-class String_Operation(pg.Mixin_Generatable, pg.Mixin_Renderable_Operation):
-    def get_patterns(self) -> list[str|pg.FP]:
+class String_Operation(Mixin_Generatable, Mixin_Renderable_Operation):
+    def get_patterns(self) -> list[str|FP]:
         return [
-            pg.FP(pg.FN(String), '+', pg.FN(String), weight=5),
-            pg.FP(pg.FN(pg.Integer, 0, 100), '*', pg.FN(String), weight=1),
-            pg.FP(pg.FN(String), '*', pg.FN(pg.Integer, 0, 100), weight=1),
+            FP(FN(String), '+', FN(String), weight=5),
+            FP(FN(Integer, 0, 100), '*', FN(String), weight=1),
+            FP(FN(String), '*', FN(Integer, 0, 100), weight=1),
         ]
 
-class String_Literal(pg.Mixin_Generatable, pg.Mixin_Renderable):
+class String_Literal(Mixin_Generatable, Mixin_Renderable):
     # TODO generate?
     words = ";hello;world;day;find;eat;student;huge;goodbye;math;english;physics;chemistry;biology;french;stem;art;drama;music;geography;history;philosophy;cs;eblock;aps;periwinkle;first;second;violin;piano;sun;snow;rain;sleet;hail;fog;breeze;a;b;c;d;e;f;g;h;i;j;k;l;m;n;o;p;q;r;s;t;u;v;w;x;y;z;foo;bar;baz;mark;matthew;luke;john;sawczak;groot;kim;robinson;peters;van schepen;dykxhoorn;hoving;petrusma;gretton;brown;black;red;fuchsia;green;yellow;white;grey;black;blue;teal;turquoise;purple;violet;indigo;orange;gold;forest;beach;hills;mountains;desert;plains;prairie;sky"
     words = words.split(';')

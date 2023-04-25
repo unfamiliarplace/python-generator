@@ -1,7 +1,6 @@
-import pg
+from mixins.pg_mixin_renderable import Mixin_Renderable
 
-
-class Sequence(pg.Mixin_Renderable):
+class Sequence(Mixin_Renderable):
 
     def __init__(self, *components: object) -> None:
         self.components = components

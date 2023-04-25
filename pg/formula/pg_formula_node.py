@@ -1,5 +1,4 @@
-import pg
-
+from mixins.pg_mixin_renderable import Mixin_Renderable
 
 class Formula_Node():
 
@@ -8,7 +7,7 @@ class Formula_Node():
         self.args = args
         self.kwargs = kwargs
     
-    def evaluate(self) -> pg.Mixin_Renderable:
+    def evaluate(self) -> Mixin_Renderable:
         return self.component_cls(*self.args, **self.kwargs)
         
     def __str__(self) -> str:

@@ -1,23 +1,30 @@
-import pg
 
+from expressions.pg_boolean import Boolean
+from expressions.pg_container import Container
+from expressions.pg_variable import Variable
+from formula.pg_formula_node import FN
+from formula.pg_formula_pattern import FP
+from formula.pg_formula_requirement import FR
+from mixins.pg_mixin_generatable import Mixin_Generatable
+from mixins.pg_mixin_renderable import Mixin_Renderable
 
-class Control(pg.Mixin_Generatable, pg.Mixin_Renderable):
+class Control(Mixin_Generatable, Mixin_Renderable):
 
-    def get_patterns(self) -> list[str|pg.FP]:
+    def get_patterns(self) -> list[str|FP]:
         return [
         # TODO for i in range(int)
         # TODO for i in range(len(container))
 
-        pg.FP('for', pg.FN(pg.Variable, 'element'), 'in', pg.FN(pg.Container), reqs=pg.FR('containers'), suffix=':'),
+        FP('for', FN(Variable, 'element'), 'in', FN(Container), reqs=FR('containers'), suffix=':'),
 
-        pg.FP('while', pg.FN(pg.Boolean), suffix=':'),
-        pg.FP('break'),
+        FP('while', FN(Boolean), suffix=':'),
+        FP('break'),
 
-        pg.FP('if', pg.FN(pg.Boolean), suffix=':'),
-        pg.FP('elif', pg.FN(pg.Boolean), suffix=':'),
-        pg.FP('else', suffix=':'),
+        FP('if', FN(Boolean), suffix=':'),
+        FP('elif', FN(Boolean), suffix=':'),
+        FP('else', suffix=':'),
 
-        pg.FP('try', suffix=':'),
-        pg.FP('except', suffix=':'),
-        pg.FP('except', pg.FN(pg.Exception), suffix=':'),
+        FP('try', suffix=':'),
+        FP('except', suffix=':'),
+        FP('except', FN(Exception), suffix=':'),
     ]

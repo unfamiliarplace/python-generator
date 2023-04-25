@@ -1,4 +1,3 @@
-
 import pg
 
 class Requirement_Mode():
@@ -10,12 +9,6 @@ RM = Requirement_Mode
 
 class Formula_Requirement():
 
-    req_checkers = {
-        RM.NONE: pg.PythonGenerator().none,
-        RM.ANY: pg.PythonGenerator().any,
-        RM.ALL: pg.PythonGenerator().all,
-    }
-
     def __init__(self, *reqs: str, req_mode: int=RM.ALL) -> None:
 
         # TODO in order for this to work we need to access the instantiated PG not the static class
@@ -24,7 +17,15 @@ class Formula_Requirement():
         self.reqs = reqs
     
     def met(self) -> bool:
-        return self.req_checkers[self.req_mode](*self.reqs)
+
+        # argh
+        req_checkers = {
+            RM.NONE: pg.PythonGenerator().none,
+            RM.ANY: pg.PythonGenerator().any,
+            RM.ALL: pg.PythonGenerator().all,
+        }
+
+        return req_checkers[self.req_mode](*self.reqs)
 
 # Short name
 FR = Formula_Requirement

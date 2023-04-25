@@ -1,10 +1,14 @@
 from js_random import JS_Random as R
-import pg
 
-class Container(pg.Mixin_Generatable, pg.Mixin_Renderable):
+from mixins.pg_mixin_generatable import Mixin_Generatable
+from mixins.pg_mixin_renderable import Mixin_Renderable
+
+
+class Container(Mixin_Generatable, Mixin_Renderable):
 
     def __init__(self, types: str='any') -> None:
         self.types = types
+        super().__init__()
 
     def generate(self) -> str:
         # TODO

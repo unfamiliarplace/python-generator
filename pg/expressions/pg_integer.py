@@ -30,7 +30,7 @@ class Integer_Operation(Mixin_Generatable, Mixin_Renderable_Operation):
     def __init__(self, lower: int=-50, upper: int=100) -> None:
         self.lower = lower
         self.upper = upper
-        super.__init__()
+        super().__init__()
 
     def get_patterns(self) -> list[str|FP]:
         return [
@@ -46,6 +46,7 @@ class Integer_Literal(Mixin_Generatable, Mixin_Renderable):
     def __init__(self, lower: int=-50, upper: int=100) -> None:
         self.lower = lower
         self.upper = upper
+        super().__init__()
 
     def generate(self) -> int:
         return R.number_between(self.lower, self.upper, False)

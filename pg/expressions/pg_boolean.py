@@ -36,8 +36,8 @@ class Boolean_Operation(Mixin_Generatable, Mixin_Renderable_Operation):
             FP(FN(PG_E.Expression), '!=', FN(PG_E.Expression), weight=2),
             FP(FN(PG_E.Expression), 'is', FN(PG_E.Expression)),
             FP(FN(PG_E.Expression), 'is not', FN(PG_E.Expression)),
-            FP(FN(PG_E.Expression), 'in', FN(Container), weight=2),
-            FP(FN(PG_E.Expression), 'not in', FN(Container))
+            FP(FN(PG_E.Expression), 'in', FN(Container), reqs=FR('containers'), weight=2),
+            FP(FN(PG_E.Expression), 'not in', FN(Container), reqs=FR('containers'))
         ]
 
 class Boolean_Literal(Mixin_Generatable, Mixin_Renderable):

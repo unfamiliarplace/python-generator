@@ -16,8 +16,8 @@ class Container(Mixin_Generatable, Mixin_Renderable):
         return str(values)[1:-1]
     
     def __str__(self) -> str:
-        s = ', '.join(self.generate())
-
+        s = self.generate()
+        
         if R.flip_coin(.33):
             return f'[{s}]'
         
